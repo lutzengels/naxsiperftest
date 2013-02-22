@@ -1,0 +1,35 @@
+\documentclass[Planning]{subfiles}
+\begin{document}
+\newpage
+\section{Planning}
+\label{sec:Planning}
+\subsection{Planning}
+\textbf{Week 1}
+\begin{itemize}
+\item Literature study
+\item Interview with Sara about current topology discovery methods and their shortcomings.
+\end{itemize}
+\textbf{Week 2}
+\begin{itemize}
+\item Literature study
+\item Design test environment, experiments and tools
+\item Create tools for testing
+\end{itemize}
+\textbf{Week 3}
+\begin{itemize}
+\item Set up test environment
+\item Finalize tools
+\end{itemize}
+\textbf{Week 4}
+\begin{itemize}
+\item Execute the experiments
+\item Analyse results
+\end{itemize}
+\textbf{Week 5}
+\begin{itemize}
+\item Write report
+\item Prepare presentation
+\end{itemize}
+
+\end{document}
+
