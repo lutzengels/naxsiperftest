@@ -1,0 +1,7 @@
+\documentclass[Template]{subfiles}
+\begin{document}
+\begin{abstract}
+Network Topology Discovery is the process to automatically generate a network topology by examining the connected devices or messages on the wire. LLDP is designed to be vendor-neutral and this report is about exploring where LLDP can improve topology discovery.
+\end{abstract}
+\end{document}
+

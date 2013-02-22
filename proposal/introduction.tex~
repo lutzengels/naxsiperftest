@@ -1,0 +1,32 @@
+\documentclass[Introduction]{subfiles}
+\begin{document}
+\section{Introduction}
+\label{sec:Introduction}
+Network Topology Discovery is the process of automatically generating a network topology by examining the connected devices or messages on the wire. It is used for many network management tasks like resource management and fault management. Network Topology Discovery can be done on different layers of the network. The physical topology, for example, gives an overview of the physical interconnections between all devices in the network. The logical topology, on the other hand, displays the data flow between devices according to the protocols that are used on various OSI layers. This can be, for example, Ethernet on OSI layer two or IP on OSI layer three. 
+
+RFC 2922\cite{rfc2922} describes a Physical Topology Management Information Base (MIB) that can contain information about the physical topology of the network. However, it does not describe a method to gather this information. Manufactures of network devices have been using their own proprietary protocols such as Nortel Discovery Protocol (NDP), Cisco Discovery Protocol (CDP) and Foundry Discovery Protocol (FDP) for this purpose. Despite of the existence of a standardized way to store physical topology information, it is not commonly used by the manufactures. 
+
+In 2005, the first version of the IEEE 802.1AB\cite{802.1AB} standard was ratified. This open standard describes the Link Layer Discovery Protocol (LLDP) which makes use of the Physical Topology MIB of RFC 2922. Although manufactures are adopting LLDP, it is not known when it will be universally available. 
+
+In this project we will focus on the challenges that appear when one tries to correlate physical and logical topology information to create a full network topology that contains the information of various OSI layers. LLDP will be used as a basis to create the physical topology. The experiments will be done based on information gained from the test and/or production networks of SURFsara. This makes it also possible to make some observations on the usefulness of LLDP in modern heterogeneous networks. It also gives an opportunity to observe the effects of the presence of (tunnelling) protocols that affect the network topology when current Network Topology Discovery methods are used.
+
+\subsection{Related work}
+A lot of research has already been done on Network Topology Discovery. Topology discovery on the IP layer is relatively straightforward. If supported by all network devices, information gathered with the Simple Network Management Protocol (SNMP) gives the most accurate and fastest results /ref. Another, even faster approach that uses Open Shortest Path First (OSPF) information gathered with SNMP is described in /ref.
+
+Topology discovery of Ethernet networks is often interchanged with physical topology discovery. However, many methods  /ref discover only the active Ethernet topology which does not give a complete picture of the whole physical network. This can cause confusion. Therefore it can be a good idea to make a distinction between physical topology discovery and topology discovery of layer two networks.
+ 
+Because layer one and two devices are transparent to their surroundings and because the protocols that are designed for physical topology discovery are nearly always proprietary, most research on physical topology discovery (actually mostly topology discovery of the active Ethernet topology) is based on information gathered from the Address Forwarding Tables (AFT) of switches /ref. Another approach, described in /ref, circumvents the stated problems by using software agents on end devices to discover the topology of the Ethernet network.
+
+LLDP has not really caught the attention of researchers. This is probably because it is relatively new and cannot be used in heterogeneous networks with older devices. Also the correlation between topology discovery information on different layers is hardly done. One example can be found in /ref. Another thing that stands out is that most research on topology discovery is based on the use of relative simple networks. Although Virtual LAN's (VLAN's) are sometimes mentioned, there is no previous research on Network Topology Discovery in more complex networks with, for example, tunnelling protocols like IP Security (IPSEC) Generic Routing Encapsulation (GRE) or Virtual Routing and Forwarding (VRF). 
+
+
+\subsection{Research questions}
+\emph{What are the challenges with the correlation of physical topology information based on LLDP and logical topology information?}
+
+%\emph{What are the challenges when one tries to correlate physical and logical topology information?}
+
+%\emph{How can the Ethernet layer topology bases on LLDP be correlated with the IP layer?}
+
+%\emph{How effectively can LLDP information be used for topology discovery?}
+
+\end{document}
