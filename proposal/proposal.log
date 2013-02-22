@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.30)  22 FEB 2013 14:27
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.30)  22 FEB 2013 14:59
 entering extended mode
  %&-line parsing enabled.
 **proposal.tex
@@ -348,8 +348,13 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 15.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-) (./introduction.tex)
-(./scope.tex) (./approach.tex) (./requirements.tex) (./planning.tex)
+) (./introduction.tex
+Underfull \hbox (badness 1983) in paragraph at lines 13--13
+[][]$\OT1/cmtt/m/n/8 http : / / news . netcraft . com / archives / category / w
+eb-[]server-[]survey/$\OT1/cmr/m/n/8 , Febru-ary 2013,
+ []
+
+) (./scope.tex) (./approach.tex) (./requirements.tex) (./planning.tex)
 (./proposal.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
@@ -358,22 +363,25 @@ LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./proposal.aux) ) 
 Here is how much of TeX's memory you used:
- 1543 strings out of 495061
- 16902 string characters out of 1182621
- 64158 words of memory out of 3000000
- 4713 multiletter control sequences out of 15000+50000
- 9535 words of font info for 36 fonts, out of 3000000 for 9000
+ 1555 strings out of 495061
+ 17027 string characters out of 1182621
+ 65158 words of memory out of 3000000
+ 4722 multiletter control sequences out of 15000+50000
+ 11402 words of font info for 45 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 27i,6n,22p,225b,201s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,8n,22p,225b,306s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/sh
 are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-t
 exlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts
 /type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/publi
 c/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
-m/cmti10.pfb>
-Output written on proposal.pdf (1 page, 70048 bytes).
+m/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></
+usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/tex
+mf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/
+fonts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on proposal.pdf (1 page, 103756 bytes).
 PDF statistics:
- 26 PDF objects out of 1000 (max. 8388607)
+ 42 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
