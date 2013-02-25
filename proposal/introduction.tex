@@ -2,15 +2,11 @@
 \begin{document}
 \section{Introduction}
 \label{sec:Introduction}
-More and more people will have access to the internet \cite{TODO: CLAIM} and they will have access to many web applications. Commercial companies have access to an ever growing market, but also criminals become more intelligent on how to reach end-users and abuse the web services users are accessing on a daily basis.
-According to the web survey held by Netcraft in february 2013 \footnote{\url{http://news.netcraft.com/archives/category/web-server-survey/}, February 2013}, the majority of web servers is running Apache and it is followed by Microsoft. However, Nginx is gaining more popularity and it is not only used as a standard web server, but also as a reverse proxy for load balancing purposes. Naxsi is developed as a response to common attacks that often occur the internet. Naxsi is firewall designed to work with Nginx. It works as a DROP-by-default firewall and rules should be added to ACCEPT certain traffic. This concept is also known as whitelisting.
+More and more people will have access to the internet \footnote{\url{http://data.worldbank.org/indicator/IT.NET.USER.P2/countries?display=graph}} and they will have access to many web applications. Commercial companies have access to an ever growing market, but also criminals become more intelligent on how to reach end-users and abuse the web services users are accessing on a daily basis.
+According to the web survey held by Netcraft in february 2013 \footnote{\url{http://news.netcraft.com/archives/category/web-server-survey/}, February 2013}, the majority of web servers is running Apache and it is followed by Microsoft. However, Nginx is gaining more popularity and it is not only used as a standard web server, but also as a reverse proxy for load balancing purposes. Naxsi (\emph{Nginx Anti Xss \& Sql Injection}) is developed as a response to common attacks that often occur on the internet. Naxsi is a firewall designed to work with Nginx. It works as a DROP-by-default firewall, and rules should be added to ACCEPT certain traffic. This concept is also known as whitelisting.
 Our research will focus on the performance of an Naxsi-Nginx server when it is under heavy load and it has to deal with different attacks.
 
----
-
-In a time where huge botnets are utilized to attack services, it is ever more important to protect your infrastructure. When taking into account the fact that web services gain more market share it is the web servers that need to be protected. One of those web servers is nginx. Compared to other web servers it is
-light-weight, which attracts more users in time where power consumption of infrastructure becomes important. Currently (February 2013) it holds 13\% market share \footnote{\url{http://news.netcraft.com/archives/category/web-server-survey/}, February 2013}\\ In 2011 development of Naxsi (\emph{Nginx Anti Xss \& Sql Injection}) started. As the (written
-out) abbreviation implies it protects Nginx from Cross-site scripting (XSS) and Sql injection attacks. To do so it takes the whitelist approach, as to circumvent overly complex and regular expression based rule sets. This project aims at generating valuable data by conducting performance testing
-of Naxsi in a number of scenarios.
+\subsection{Research question}
+\emph{How will a webserver perform with the use of Naxsi as the front-end firewall compared to a webserver without a Naxsi firewall?}
 
 \end{document}
