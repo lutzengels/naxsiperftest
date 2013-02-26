@@ -1,0 +1,62 @@
+\documentclass[Configuration]{subfiles}
+\begin{document}
+\newpage
+\section{Configuration}
+\label{sec:Configuration}
+% TODO: figure infrastructure
+
+\subsection{Router}
+
+\begin{lstlisting}[frame=single,caption=/etc/resolv.conf,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+nameserver 145.100.96.11
+nameserver 145.100.96.22
+\end{lstlisting}
+
+\begin{lstlisting}[frame=single,caption=/etc/network/interfaces,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+auto eth0
+iface eth0 inet dhcp
+# This is an autoconfigured IPv6 interface
+iface eth0 inet6 auto
+
+auto eth1
+iface eth1 inet static
+        address 192.168.100.254
+        netmask 255.255.255.0
+\end{lstlisting}
+
+\begin{lstlisting}[frame=single,caption=/etc/network/interfaces,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+# Allow internet for internal network
+iptables -t nat -A POSTROUTING -o eth0 -s 192.168.100.0/24 ! -d 192.168.100.0/24 -j SNAT --to-source 145.100.104.61
+
+# Allow ssh to reach internal network
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 1001 -j DNAT --to-destination 192.168.100.1:22
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 1002 -j DNAT --to-destination 192.168.100.2:22
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 1003 -j DNAT --to-destination 192.168.100.3:22
+\end{lstlisting}
+
+\subsection{server01}
+
+\begin{lstlisting}[frame=single,caption=/etc/resolv.conf,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+nameserver 145.100.96.11
+nameserver 145.100.96.22
+\end{lstlisting}
+
+\subsection{server02}
+
+\begin{lstlisting}[frame=single,caption=/etc/resolv.conf,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+nameserver 145.100.96.11
+nameserver 145.100.96.22
+\end{lstlisting}
+
+\subsection{server03}
+
+\begin{lstlisting}[frame=single,caption=/etc/resolv.conf,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+nameserver 145.100.96.11
+nameserver 145.100.96.22
+\end{lstlisting}
+\end{document}
+

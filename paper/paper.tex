@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage{cite}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{subfiles}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{color}
+\usepackage[printonlyused]{acronym}
+
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+%\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+
+% Define colors
+\definecolor{gray}{gray}{0.8}
+
+\title{Naxsi performance}
+
+\author{Lutz Engels, Dennis Pellikaan \\ University of Amsterdam}
+
+\begin{document}
+\maketitle
+
+\subfile{abstract.tex}
+\subfile{introduction.tex}
+
+\bibliographystyle{plain}
+\bibliography{references}
+\appendix
+\subfile{acronyms.tex}
+\subfile{configuration.tex}
+\end{document}
