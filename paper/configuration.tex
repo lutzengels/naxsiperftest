@@ -1,58 +1,171 @@
 \documentclass[Configuration]{subfiles}
 \begin{document}
-\newpage
-\section{Configuration}
-\label{sec:Configuration}
+\section{Experimental setup}
+\label{sec:Experimental setup}
 % TODO: figure infrastructure
 
-\subsection{Router}
+\subsection{Hardware}
 
-\begin{lstlisting}[frame=single,caption=/etc/resolv.conf,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
-nameserver 145.100.96.11
-nameserver 145.100.96.22
+\subsubsection{server01}
+\begin{table}[h]
+\centering
+\begin{tabular}{p{2cm} p{9cm} }
+\textbf{Brand} & Dell \\
+\textbf{Model} & PowerEdge R210 \\
+\textbf{CPU} & Intel(R) Xeon(R) CPU L3426 @ 1.87GHz (2x)\\
+\textbf{Memmory} & 8 GB RAM, 1066 MHz (4x 2GB) \\
+\textbf{Disk} & 500 GB, SATA 3.0 Gbps (2x)\\
+\textbf{Interfaces} &  Integrated 10/100/1000 Mbps NIC (2x) \\
+ & Broadcom NetXtreme II BCM5716 1000Base-T (C0) PCI Express Dual-port \\ 
+\textbf{OS} & Debian Squeeze 6.0.7 \\
+\end{tabular}
+\end{table}
+
+\subsubsection{server01}
+\subsubsection{server01}
+\subsubsection{server01}
+
+\subsection{Configuration}
+
+\subsubsection{Time synchronization}
+All servers update their local time automatically with the use of cronjob
+
+\begin{lstlisting}[frame=single,caption=cronjob -l ,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+@hourly /usr/sbin/ntpdate 0.nl.pool.ntp.org 1.nl.pool.ntp.org 2.nl.pool.ntp.org 3.nl.pool.ntp.org
+\end{lstlisting}
+
+\subsubsection{sever01}
+
+\begin{lstlisting}[frame=single,caption=/etc/udev/rules.d/70-persistent-net.rules,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+KERNEL=="eth*", ATTR{address}=="b8:ac:6f:8b:81:bd", NAME="eth0"
+KERNEL=="eth*", ATTR{address}=="b8:ac:6f:8b:81:be", NAME="eth1"
+KERNEL=="eth*", ATTR{address}=="00:15:17:74:7b:3c", NAME="eth2"
+KERNEL=="eth*", ATTR{address}=="00:15:17:74:7b:3d", NAME="eth3"
 \end{lstlisting}
 
 \begin{lstlisting}[frame=single,caption=/etc/network/interfaces,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
 auto lo
 iface lo inet loopback
 
+auto lo
+iface lo inet loopback
+
 # The primary network interface
-auto eth0
+allow-hotplug eth0
 iface eth0 inet dhcp
-# This is an autoconfigured IPv6 interface
-iface eth0 inet6 auto
 
 auto eth1
 iface eth1 inet static
-        address 192.168.100.254
+        address 10.1.2.1
         netmask 255.255.255.0
+        network 10.1.2.0
+        broadcast 10.1.2.255
+
+auto eth2
+iface eth2 inet static
+        address 10.1.3.1
+        netmask 255.255.255.0
+        network 10.1.3.0
+        broadcast 10.1.3.255
+
+auto eth3
+iface eth3 inet static
+        address 10.1.4.1
+        netmask 255.255.255.0
+        network 10.1.4.0
+        broadcast 10.1.4.255
+\end{lstlisting}
+
+\begin{lstlisting}[frame=single,caption=/etc/resolv.conf,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+# sysctl -p
+net.ipv4.ip_forward = 1
+\end{lstlisting}
+
+\begin{lstlisting}[frame=single,caption=/etc/resolv.conf,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+nameserver 145.100.96.11
+nameserver 145.100.96.22
 \end{lstlisting}
 
 \begin{lstlisting}[frame=single,caption=/etc/network/interfaces,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+#!/bin/bash
+
 # Allow internet for internal network
-iptables -t nat -A POSTROUTING -o eth0 -s 192.168.100.0/24 ! -d 192.168.100.0/24 -j SNAT --to-source 145.100.104.61
+iptables -t nat -A POSTROUTING -o eth0 -s 10.1.0.0/16 ! -d 10.0.0.0/8 -j SNAT --to-source 145.100.104.61
 
 # Allow ssh to reach internal network
-iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 1001 -j DNAT --to-destination 192.168.100.1:22
-iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 1002 -j DNAT --to-destination 192.168.100.2:22
-iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 1003 -j DNAT --to-destination 192.168.100.3:22
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 1002 -j DNAT --to-destination 10.1.1.2:22
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 1003 -j DNAT --to-destination 10.1.2.2:22
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 1004 -j DNAT --to-destination 10.1.3.2:22
 \end{lstlisting}
 
-\subsection{server01}
+\subsubsection{server02}
+
+\begin{lstlisting}[frame=single,caption=/etc/network/interfaces,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+        address 10.1.2.2
+        netmask 255.255.255.0
+        network 10.1.2.0
+        broadcast 10.1.2.255
+        gateway 10.1.2.1
+
+auto eth1
+iface eth1 inet static
+        address 10.2.2.2
+        netmask 255.255.255.0
+        network 10.2.2.0
+        broadcast 10.2.2.255
+\end{lstlisting}
 
 \begin{lstlisting}[frame=single,caption=/etc/resolv.conf,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
 nameserver 145.100.96.11
 nameserver 145.100.96.22
 \end{lstlisting}
 
-\subsection{server02}
+\subsubsection{server03}
+
+\begin{lstlisting}[frame=single,caption=/etc/network/interfaces,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+        address 10.1.3.2
+        netmask 255.255.255.0
+        network 10.1.3.0
+        broadcast 10.1.3.255
+        gateway 10.1.3.1
+
+auto eth1
+iface eth1 inet static
+        address 10.2.2.3
+        netmask 255.255.255.0
+        network 10.2.2.0
+        broadcast 10.2.2.255
+\end{lstlisting}
 
 \begin{lstlisting}[frame=single,caption=/etc/resolv.conf,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
 nameserver 145.100.96.11
 nameserver 145.100.96.22
 \end{lstlisting}
 
-\subsection{server03}
+\subsubsection{server04}
+
+\begin{lstlisting}[frame=single,caption=/etc/network/interfaces,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+        address 10.1.4.2
+        netmask 255.255.255.0
+        network 10.1.4.0
+        broadcast 10.1.4.255
+        gateway 10.1.4.1
+\end{lstlisting}
 
 \begin{lstlisting}[frame=single,caption=/etc/resolv.conf,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
 nameserver 145.100.96.11

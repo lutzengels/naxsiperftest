@@ -4,6 +4,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{graphicx}
 \usepackage{subfiles}
 \usepackage{url}
 \usepackage{listings}
@@ -12,8 +13,8 @@
 \usepackage[printonlyused]{acronym}
 
 \DeclareCaptionFont{white}{\color{white}}
-\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
-%\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\DeclareCaptionFormat{listing}{\colorbox{black}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
 
 % Define colors
 \definecolor{gray}{gray}{0.8}
@@ -26,7 +27,11 @@
 \maketitle
 
 \subfile{abstract.tex}
+\tableofcontents
 \subfile{introduction.tex}
+\subfile{measurements.tex}
+\subfile{results.tex}
+\subfile{conclusion.tex}
 
 \bibliographystyle{plain}
 \bibliography{references}
