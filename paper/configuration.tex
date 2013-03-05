@@ -166,14 +166,46 @@ cd nginx-1.2.7/
 make
 make install
 mkdir /etc/nginx/sites-enabled
+mkdir -p /var/lib/nginx/body
 \end{lstlisting}
 
 \begin{lstlisting}[frame=single,caption=/etc/nginx/nginx.conf,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
-TO BE INCLUDED WHEN WORKING
+worker_processes  1;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    sendfile        on;
+
+    keepalive_timeout  65;
+
+    include                     /etc/nginx/sites-enabled/*;
+}
 \end{lstlisting}
 
-\begin{lstlisting}[frame=single,caption=/etc/nginx/sites-enabled/default,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
-TO BE INCLUDED WHEN WORKING
+\begin{lstlisting}[frame=single,caption=/etc/nginx/sites-enabled/with\_naxsi.test.nl,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+upstream with_naxsi.test.nl {
+  server 10.1.2.2;
+}
+
+server {
+  listen                80;
+
+  server_name           with_naxsi.test.nl;
+
+  location / {
+    proxy_pass          http://with_naxsi.test.nl;
+    proxy_redirect      off;
+    proxy_set_header    Host             $host;
+    proxy_set_header    X-Real-IP        $remote_addr;
+    proxy_set_header    X-Forwarded-For  $proxy_add_x_forwarded_for;
+  }
+}
 \end{lstlisting}
 
 \begin{lstlisting}[frame=single,caption=/etc/nginx/nbs.rules,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
@@ -182,6 +214,11 @@ TO BE INCLUDED WHEN WORKING
 
 
 \subsubsection{server02}
+
+\begin{lstlisting}[frame=single,caption=Debian packages,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+# apt-get install nginx php5-mysql php-apc php5-xsl php5-xmlrpc php5-sqlite php5-curl php5-gd php5-tidy
+\end{lstlisting}
+
 
 \begin{lstlisting}[frame=single,caption=/etc/network/interfaces,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
 auto lo
@@ -206,6 +243,24 @@ iface eth1 inet static
 \begin{lstlisting}[frame=single,caption=/etc/resolv.conf,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
 nameserver 145.100.96.11
 nameserver 145.100.96.22
+\end{lstlisting}
+
+\begin{lstlisting}[frame=single,caption=/etc/nginx/sites-enabled/with\_naxsi.test.nl,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+server {
+  listen          80;
+  server_name     with_naxsi.test.nl;
+
+  index           index.php;
+  root            /var/www/wordpress;      
+}
+\end{lstlisting}
+
+
+\begin{lstlisting}[frame=single,caption=Wordpress 3.5.1 installation,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+server {
+# cd /var/www
+# wget http://wordpress.org/latest.tar.gz
+# tar zxvf latest.tar.gz 
 \end{lstlisting}
 
 \subsubsection{server03}
@@ -233,6 +288,12 @@ iface eth1 inet static
 \begin{lstlisting}[frame=single,caption=/etc/resolv.conf,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
 nameserver 145.100.96.11
 nameserver 145.100.96.22
+\end{lstlisting}
+
+\begin{lstlisting}[frame=single,caption=/etc/mysql/my.cnf,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+...
+bind-address            = 10.2.2.3
+...
 \end{lstlisting}
 
 \subsubsection{server04}
