@@ -5,4 +5,5 @@ paper/*.pdf
 paper/*.aux
 paper/*.toc
 paper/*.synctex.gz
+paper/*.*\~
 
