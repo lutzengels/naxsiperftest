@@ -212,13 +212,7 @@ server {
 TO BE INCLUDED WHEN WORKING
 \end{lstlisting}
 
-
 \subsubsection{server02}
-
-\begin{lstlisting}[frame=single,caption=Debian packages,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
-# apt-get install nginx php5-mysql php-apc php5-xsl php5-xmlrpc php5-sqlite php5-curl php5-gd php5-tidy
-\end{lstlisting}
-
 
 \begin{lstlisting}[frame=single,caption=/etc/network/interfaces,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
 auto lo
@@ -245,19 +239,42 @@ nameserver 145.100.96.11
 nameserver 145.100.96.22
 \end{lstlisting}
 
+\begin{lstlisting}[frame=single,caption=/etc/nginx/nginx.conf,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+user www-data;
+worker_processes  1;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    sendfile        on;
+
+    keepalive_timeout  65;
+
+    include /etc/nginx/sites-enabled/*;
+}
+\end{lstlisting}
+
 \begin{lstlisting}[frame=single,caption=/etc/nginx/sites-enabled/with\_naxsi.test.nl,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
 server {
   listen          80;
   server_name     with_naxsi.test.nl;
 
   index           index.php;
-  root            /var/www/wordpress;      
+  root            /var/www/wordpress;
+
+  location ~ \.php$ {
+    include fastcgi_params;
+    fastcgi_pass unix:/var/run/fcgiwrap.socket;
+  }
 }
 \end{lstlisting}
 
-
 \begin{lstlisting}[frame=single,caption=Wordpress 3.5.1 installation,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
-server {
 # cd /var/www
 # wget http://wordpress.org/latest.tar.gz
 # tar zxvf latest.tar.gz 
