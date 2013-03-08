@@ -172,7 +172,7 @@ mkdir -p /var/lib/nginx/body
 \end{lstlisting}
 
 \begin{lstlisting}[frame=single,caption=/etc/nginx/nginx.conf,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
-worker_processes  8;
+orker_processes  8;
 
 events {
     worker_connections  1024;
@@ -216,6 +216,8 @@ TO BE INCLUDED WHEN WORKING
 
 \subsubsection{server02}
 
+%Mainly based on \url{http://library.linode.com/web-servers/nginx/php-fastcgi/debian-6-squeeze}
+
 \begin{lstlisting}[frame=single,caption=/etc/network/interfaces,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
 auto lo
 iface lo inet loopback
@@ -241,53 +243,8 @@ nameserver 145.100.96.11
 nameserver 145.100.96.22
 \end{lstlisting}
 
-\begin{lstlisting}[frame=single,caption=/etc/nginx/nginx.conf,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
-user www-data;
-worker_processes  8;
-
-events {
-    worker_connections  1024;
-}
-
-http {
-    include       mime.types;
-    default_type  application/octet-stream;
-
-    sendfile        on;
-
-    keepalive_timeout  65;
-
-    include /etc/nginx/sites-enabled/*;
-}
-\end{lstlisting}
-
-\begin{lstlisting}[frame=single,caption=/etc/nginx/sites-enabled/with\_naxsi.test.nl,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
-server {
-  listen          80;
-  server_name     with_naxsi.test.nl;
-
-  index           index.php;
-  root            /var/www/wordpress;
-
-  location ~ \.php$ {
-    include fastcgi_params;
-    fastcgi_pass unix:/var/run/fcgiwrap.socket;
-  }
-}
-\end{lstlisting}
-
-\begin{lstlisting}[frame=single,caption=Wordpress 3.5.1 installation,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
-# cd /var/www
-# wget http://wordpress.org/latest.tar.gz
-# tar zxvf latest.tar.gz 
-\end{lstlisting}
-
-\subsubsection{server02-alternative}
-Mainly based on \url{http://library.linode.com/web-servers/nginx/php-fastcgi/debian-6-squeeze}
-
 \begin{lstlisting}[frame=single,caption=necessary packages,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
-# apt-get install nginx php5-cli php5-cgi spawn-fcgi
-# apt-get install php5-common php5-mysql php5-xmlrpc php5-cgi php5-curl php5-gd php5-cli  php-apc php-pear php5-dev php5-imap php5-mcrypt
+# apt-get install nginx spawn-fcgi php5-common php5-mysql php5-xmlrpc php5-cgi php5-curl php5-gd php5-cli  php-apc php-pear php5-dev php5-imap php5-mcrypt
 \end{lstlisting}
 
 \begin{lstlisting}[frame=single,caption=/etc/php5/cgi/php.ini,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
@@ -336,7 +293,7 @@ PHP5=/usr/bin/php5-cgi
 
 \begin{lstlisting}[frame=single,caption=/etc/nginx/nginx.conf,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
 user www-data;
-worker_processes  1;
+worker_processes  8;
 
 events {
     worker_connections  1024;
@@ -349,6 +306,8 @@ http {
     sendfile        on;
 
     keepalive_timeout  65;
+
+    access_log off;
 
     include /etc/nginx/sites-enabled/*;
 }
@@ -455,6 +414,10 @@ nameserver 145.100.96.11
 nameserver 145.100.96.22
 \end{lstlisting}
 
+\begin{lstlisting}[frame=single,caption=MySQL Server 5.1,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+# apt-get install mysql-server
+\end{lstlisting}
+
 \begin{lstlisting}[frame=single,caption=MySQL configuration,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
 # sed -i 's/127.0.0.1/10.2.2.3/' /etc/mysql/my.cnf
 # /etc/init.d/mysql restart
@@ -486,10 +449,6 @@ iface eth0 inet static
 \begin{lstlisting}[frame=single,caption=/etc/resolv.conf,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
 nameserver 145.100.96.11
 nameserver 145.100.96.22
-\end{lstlisting}
-
-\begin{lstlisting}[frame=single,caption=MySQL Server 5.1,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
-# apt-get install mysql-server
 \end{lstlisting}
 \end{document}
 
