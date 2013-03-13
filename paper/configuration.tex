@@ -450,5 +450,23 @@ iface eth0 inet static
 nameserver 145.100.96.11
 nameserver 145.100.96.22
 \end{lstlisting}
+
+\begin{lstlisting}[frame=single,caption=httperf and autobench,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+# apt-get install build-essentials gawk httperf
+# wget http://www.xenoclast.org/autobench/downloads/autobench-2.1.2.tar.gz
+# tar zxvf autobench
+# cd autobench-2.1.2
+# make
+# make install
+# cd ..
+# sed -i 's/echo set data style linespoints >> gnuplot.cmd/echo set style data linespoints >> gnuplot.cmd/' /usr/local/bin/bench2graph
+
+# wget http://sourceforge.net/projects/gnuplot/files/gnuplot/4.6.1/gnuplot-4.6.1.tar.gz/download
+# tar zxvf download
+# cd gnuplot-4.6.1
+# ./configure
+# make
+# make install
+\end{lstlisting}
 \end{document}
 
