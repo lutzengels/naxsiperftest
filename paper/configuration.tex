@@ -468,5 +468,51 @@ nameserver 145.100.96.22
 # make
 # make install
 \end{lstlisting}
+
+\subsubsection{server05}
+./configure --enable-rrdtool --enable-rrdcache
+
+\begin{lstlisting}[frame=single,caption=Collectd.conf,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+# cat /opt/collectd/etc/collectd.conf | grep '^[^#]'
+LoadPlugin syslog
+<Plugin syslog>
+	LogLevel info
+</Plugin>
+LoadPlugin aggregation
+LoadPlugin cpu
+LoadPlugin csv
+LoadPlugin df
+LoadPlugin disk
+LoadPlugin interface
+LoadPlugin load
+LoadPlugin memory
+LoadPlugin network
+LoadPlugin rrdtool
+<Plugin "aggregation">
+  <Aggregation>
+    #Host "unspecified"
+    Plugin "cpu"
+    Type "cpu"
+    GroupBy "Host"
+    GroupBy "TypeInstance"
+    CalculateNum false
+    CalculateSum false
+    CalculateAverage true
+    CalculateMinimum false
+    CalculateMaximum false
+    CalculateStddev false
+  </Aggregation>
+</Plugin>
+<Plugin network>
+	Server "ff18::efc0:4a42" "25826"
+	<Server "239.192.74.66" "25826">
+	</Server>
+</Plugin>
+<Plugin rrdtool>
+	DataDir "/opt/collectd/var/lib/collectd/rrd"
+	CacheTimeout 120
+	CacheFlush   900
+</Plugin>
+\end{lstlisting}
 \end{document}
 
