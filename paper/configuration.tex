@@ -12,7 +12,7 @@
 \textbf{Brand} & Dell \\
 \textbf{Model} & PowerEdge R210 \\
 \textbf{CPU} & Intel(R) Xeon(R) CPU L3426 @ 1.87GHz (2x)\\
-\textbf{Memmory} & 8 GB RAM, 1066 MHz (4x 2GB) \\
+\textbf{Memory} & 8 GB RAM, 1066 MHz (4x 2GB) \\
 \textbf{Disk} & 500 GB, SATA 3.0 Gbps (2x)\\
 \textbf{Interfaces} &  Integrated 10/100/1000 Mbps NIC (2x) \\
  & Broadcom NetXtreme II BCM5716 1000Base-T (C0) PCI Express Dual-port \\ 
@@ -27,7 +27,7 @@
 \textbf{Brand} & SunMicro \\
 \textbf{Model} & X7DBT/X7DGT \\
 \textbf{CPU} & Intel(R) Xeon(R) CPU E5420 @ 2.50GHz (2x)\\
-\textbf{Memmory} & 16 GB RAM, 1333 MHz (8x 2GB) \\
+\textbf{Memory} & 16 GB RAM, 1333 MHz (8x 2GB) \\
 \textbf{Disk} & 160 GB, SATA 3.0 Gbps (2x)\\
 \textbf{Interfaces} &   Intel(R) PRO/1000 Network (2x) \\
 \textbf{OS} & Debian Squeeze 6.0.7 \\
@@ -35,13 +35,13 @@
 \end{table}
 
 \subsubsection{server03}
-\begin{table}[h]
+\begin{table}[h!]
 \centering
 \begin{tabular}{p{2cm} p{9cm} }
 \textbf{Brand} & SunMicro \\
 \textbf{Model} & X7DBT/X7DGT \\
 \textbf{CPU} & Intel(R) Xeon(R) CPU E5420 @ 2.50GHz (2x)\\
-\textbf{Memmory} & 16 GB RAM, 1333 MHz (8x 2GB) \\
+\textbf{Memory} & 16 GB RAM, 1333 MHz (8x 2GB) \\
 \textbf{Disk} & 160 GB, SATA 3.0 Gbps (2x)\\
 \textbf{Interfaces} &   Intel(R) PRO/1000 Network (2x) \\
 \textbf{OS} & Debian Squeeze 6.0.7 \\
@@ -64,11 +64,62 @@
 
 \subsection{Configuration}
 
-\subsubsection{Time synchronization}
-All servers update their local time automatically with the use of cronjob
-
+\subsubsection{server01, server02, server03 and server04}
 \begin{lstlisting}[frame=single,caption=cronjob -l ,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
 @hourly /usr/sbin/ntpdate 0.nl.pool.ntp.org 1.nl.pool.ntp.org 2.nl.pool.ntp.org 3.nl.pool.ntp.org
+\end{lstlisting}
+
+\begin{lstlisting}[frame=single,caption=Collectd,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+# apt-get install -y vim build-essential librrd-dev
+# wget http://collectd.org/files/collectd-5.2.1.tar.bz2
+# tar jxf collectd-5.2.1.tar.bz2
+# cd collectd-5.2.1
+# ./configure --enable-rrdtool --enable-rrdcache
+# make 
+# make install 
+
+# cat /opt/collectd/etc/collectd.conf | grep '^[^#]'
+LoadPlugin syslog
+<Plugin syslog>
+    LogLevel info
+</Plugin>
+LoadPlugin aggregation
+LoadPlugin cpu
+LoadPlugin csv
+LoadPlugin df
+LoadPlugin disk
+LoadPlugin interface
+LoadPlugin load
+LoadPlugin memory
+LoadPlugin network
+LoadPlugin rrdtool
+<Plugin "aggregation">
+  <Aggregation>
+    #Host "unspecified"
+    Plugin "cpu"
+    Type "cpu"
+    GroupBy "Host"
+    GroupBy "TypeInstance"
+    CalculateNum false
+    CalculateSum false
+    CalculateAverage true
+    CalculateMinimum false
+    CalculateMaximum false
+    CalculateStddev false
+  </Aggregation>
+</Plugin>
+<Plugin network>
+    Server "145.100.105.165" "1000"
+</Plugin> 
+<Plugin rrdtool>
+    DataDir "/opt/collectd/var/lib/collectd/rrd"
+    CacheTimeout 120
+    CacheFlush   900
+</Plugin>
+
+# cat /etc/rc.local | grep '^[^#]'
+/opt/collectd/sbin/collectd
+exit 0
 \end{lstlisting}
 
 \subsubsection{sever01}
@@ -471,18 +522,27 @@ nameserver 145.100.96.22
 \subsubsection{server05}
 
 \begin{lstlisting}[frame=single,caption=Debian packages,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
-# apt-get install apache2 librrds-perl libconfig-general-perl libhtml-parser-perl libregexp-common-perl
+# apt-get install apache2 librrds-perl libconfig-general-perl libhtml-parser-perl libregexp-common-perl librrd2-dev rrdtool
 \end{lstlisting}
 
 \begin{lstlisting}[frame=single,caption=Collectd,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+# wget http://collectd.org/files/collectd-5.2.1.tar.gz
+# tar zxvf collectd-5.2.1.tar.gz
+# cd collectd-5.2.1/
 # ./configure --enable-rrdtool --enable-rrdcache
-\end{lstlisting}
+# make
+# make install
+# cp -r contrib/collection3/* /var/www
+# chown -R www-data:www-data /var/www
 
-\begin{lstlisting}[frame=single,caption=Collectd.conf,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+# ln -s /opt/collectd/var/lib/collectd/ /var/lib/collectd
+# head -1 /var/www/etc/collection.conf 
+DataDir "/opt/collectd/var/lib/collectd/rrd"
+
 # cat /opt/collectd/etc/collectd.conf | grep '^[^#]'
 LoadPlugin syslog
 <Plugin syslog>
-	LogLevel info
+    LogLevel info
 </Plugin>
 LoadPlugin aggregation
 LoadPlugin cpu
@@ -510,15 +570,34 @@ LoadPlugin rrdtool
   </Aggregation>
 </Plugin>
 <Plugin network>
-	Server "ff18::efc0:4a42" "25826"
-	<Server "239.192.74.66" "25826">
-	</Server>
+    Listen "145.100.105.165" "1000"
 </Plugin>
 <Plugin rrdtool>
-	DataDir "/opt/collectd/var/lib/collectd/rrd"
-	CacheTimeout 120
-	CacheFlush   900
+    DataDir "/opt/collectd/var/lib/collectd/rrd"
+    CacheTimeout 120
+    CacheFlush   900
 </Plugin>
+\end{lstlisting}
+
+\begin{lstlisting}[frame=single,caption=Apache,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+# cat /etc/apache2/sites-available/collectd 
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+
+    DocumentRoot /var/www/
+
+    <Directory /var/www/>
+        AddHandler cgi-script .cgi
+        DirectoryIndex bin/index.cgi
+        Options +ExecCGI
+        Order Allow,Deny
+        Allow from all
+    </Directory>
+</VirtualHost> 
+
+# a2ensite collectd
+# a2dissite default
+# /etc/init.d/apache2 restart
 \end{lstlisting}
 
 \end{document}
