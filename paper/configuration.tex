@@ -2,7 +2,6 @@
 \begin{document}
 \section{Experimental setup}
 \label{sec:Experimental setup}
-% TODO: figure infrastructure
 
 \subsection{Hardware}
 
@@ -470,7 +469,14 @@ nameserver 145.100.96.22
 \end{lstlisting}
 
 \subsubsection{server05}
-./configure --enable-rrdtool --enable-rrdcache
+
+\begin{lstlisting}[frame=single,caption=Debian packages,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+# apt-get install apache2 librrds-perl libconfig-general-perl libhtml-parser-perl libregexp-common-perl
+\end{lstlisting}
+
+\begin{lstlisting}[frame=single,caption=Collectd,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+# ./configure --enable-rrdtool --enable-rrdcache
+\end{lstlisting}
 
 \begin{lstlisting}[frame=single,caption=Collectd.conf,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
 # cat /opt/collectd/etc/collectd.conf | grep '^[^#]'
@@ -514,5 +520,6 @@ LoadPlugin rrdtool
 	CacheFlush   900
 </Plugin>
 \end{lstlisting}
+
 \end{document}
 
