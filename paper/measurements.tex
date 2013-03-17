@@ -4,14 +4,54 @@
 \begin{document}
 \section{Measurements}
 \label{sec:Measurements}
-Basically, there are two main different scenarios for measuring the performance. The first one is where no application processing takes place, but the request with directly be answered with a HTTP 200 OK message. This creates the lowest overhead for Nginx and makes it possible to isolate the Naxsi performance overhead. The second one is a more real-life scenario, in which a Wordpress is setup on a back-end server. The front-end Nginx server acts as a reverse-proxy and only forwards the request to the appropriate server.
+Basically, there are two main different scenarios for measuring the performance. The first one is by measuring the performance of Nginx when Naxsi is disabled. The second one is by measure the performance when Naxsi is enabled. First, a baseline performance measurement is performed. The baseline is used as a reference for the other performance measurements. Second, the performance of Naxsi is measurement by changing the number of rules.
 
-\subsection{Experiment 1: Nginx without Naxsi}
+\subsection{Baseline performance measurement}
+In order to measure the performance of Naxsi, it is important to know the bottleneck of the back-end server doing all the processing at the application layer. Figure \ref{fig:Baseline measurement 1} shows that $\approx 21\%$ of the 10,000 requests produce a \verb+HTTP 5xx+ response when using 250 concurrent connections. Details can be found in appendix \ref{sec:baseline_measurement_1}
 
-\subsection{Experiment 2: Nginx with Naxsi}
+\begin{table}[h]
+\caption{Baseline measurement 1}
+\begin{tabular}{|p{2cm}|p{1,5cm}|p{1,5cm}|p{1,5cm}|p{1,5cm}|p{1,5cm}|}
+\hline
+ & \textbf{1xx} & \textbf{2xx} & \textbf{3xx} & \textbf{4xx} & \textbf{5xx} \\ \hline
+\textbf{Connections} & 0 & 0 & 8542 & 0 & 1458 \\ \hline
+\end{tabular}
+\label{fig:Baseline measurement 1}
+\end{table}
 
-\subsection{Experiment 3: Nginx without Naxsi and Wordpress}
+By using a half-interval search method, the optimal number of concurrent connections, which gave the highest rate of 190 request per second. As can be seen in figure \ref{fig:Baseline measurement 2}, the total number of \verb+HTTP 3xx+ responses is 10,000. Details can be found in appendix \ref{sec:baseline_measurement_2}
 
-\subsection{Experiment 4: Nginx with Naxsi and Wordpress}
+\begin{table}[h]
+\caption{Baseline measurement 2}
+\begin{tabular}{|p{2cm}|p{1,5cm}|p{1,5cm}|p{1,5cm}|p{1,5cm}|p{1,5cm}|}
+\hline
+ & \textbf{1xx} & \textbf{2xx} & \textbf{3xx} & \textbf{4xx} & \textbf{5xx} \\ \hline
+\textbf{Connections} & 0 & 0 & 10000 & 0 & 0 \\ \hline
+\end{tabular}
+\label{fig:Baseline measurement 2}
+\end{table}
+
+Based on the values derived from the measurement above, the performance is measured by stepping through the concurrent connections from 1 to 190. The response time is calculated by taking the average of each measurement of  each step. Each step has a measurement duration of 10 seconds. 
+
+\begin{figure}[h]
+\caption{Autobench baseline performance measurement}
+\centering
+\includegraphics[scale=0.4] {images/results/baseline/output.png}
+\label{fig:Baseline performance measurement}
+\end{figure}
+
+When staying under 190 concurrent connections, the response time is $\approx 30 ms$. The CPU shows a steady increase of the number of jiffies when the numbers of concurrent connections increase. The number of jiffies only increase when the number of concurrent connections is still below 190. As soon as the concurrency raises above 190, the Nginx server starts returning \verb+HTTP 5xx+, because the back-end is not able to handle all requests.
+
+\begin{figure}[h]
+\caption{Nginx CPU}
+\centering
+\includegraphics[scale=0.4] {images/results/baseline/cpu.png}
+\label{fig:Baseline performance measurement}
+\end{figure}
+
+% autobench --single_host --host1 wp_without_naxsi.test.nl --uri1 /index.php --low_rate 1 --high_rate 230 --rate_step 1 --num_call 1 --const_test_time 10 --file results.csv
+
+
+\subsection{Naxsi performance measurement}
 \end{document}
 

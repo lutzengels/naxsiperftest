@@ -9,19 +9,20 @@
 \contentsline {subsubsection}{\numberline {3.3.1}Raw Naxsi performance test}{5}
 \contentsline {subsubsection}{\numberline {3.3.2}Naxsi performance test with back-end server}{5}
 \contentsline {section}{\numberline {4}Measurements}{5}
-\contentsline {subsection}{\numberline {4.1}Experiment 1: Nginx without Naxsi}{6}
-\contentsline {subsection}{\numberline {4.2}Experiment 2: Nginx with Naxsi}{6}
-\contentsline {subsection}{\numberline {4.3}Experiment 3: Nginx without Naxsi and Wordpress}{6}
-\contentsline {subsection}{\numberline {4.4}Experiment 4: Nginx with Naxsi and Wordpress}{6}
-\contentsline {section}{\numberline {5}Results}{6}
-\contentsline {section}{\numberline {6}Conclusion}{6}
-\contentsline {section}{\numberline {A}Acronyms and abbreviations}{7}
-\contentsline {section}{\numberline {B}Experimental setup}{8}
-\contentsline {subsection}{\numberline {B.1}Hardware}{8}
-\contentsline {subsection}{\numberline {B.2}Configuration}{8}
-\contentsline {subsubsection}{\numberline {B.2.1}server01, server02, server03 and server04}{8}
-\contentsline {subsubsection}{\numberline {B.2.2}sever01}{10}
-\contentsline {subsubsection}{\numberline {B.2.3}server02}{14}
-\contentsline {subsubsection}{\numberline {B.2.4}server03}{18}
-\contentsline {subsubsection}{\numberline {B.2.5}server04}{19}
-\contentsline {subsubsection}{\numberline {B.2.6}server05}{20}
+\contentsline {subsection}{\numberline {4.1}Baseline performance measurement}{6}
+\contentsline {subsection}{\numberline {4.2}Naxsi performance measurement}{7}
+\contentsline {section}{\numberline {5}Results}{7}
+\contentsline {section}{\numberline {6}Conclusion}{7}
+\contentsline {section}{\numberline {A}Acronyms and abbreviations}{8}
+\contentsline {section}{\numberline {B}Experimental setup}{9}
+\contentsline {subsection}{\numberline {B.1}Hardware}{9}
+\contentsline {subsection}{\numberline {B.2}Configuration}{10}
+\contentsline {subsubsection}{\numberline {B.2.1}server01, server02, server03 and server04}{10}
+\contentsline {subsubsection}{\numberline {B.2.2}sever01}{11}
+\contentsline {subsubsection}{\numberline {B.2.3}server02}{15}
+\contentsline {subsubsection}{\numberline {B.2.4}server03}{19}
+\contentsline {subsubsection}{\numberline {B.2.5}server04}{20}
+\contentsline {subsubsection}{\numberline {B.2.6}server05}{21}
+\contentsline {section}{\numberline {C}Measurement results}{24}
+\contentsline {subsection}{\numberline {C.1}Baseline measurement 1}{24}
+\contentsline {subsection}{\numberline {C.2}Baseline measurement 2}{24}

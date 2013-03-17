@@ -1,0 +1,72 @@
+\documentclass[Measurement results]{subfiles}
+\begin{document}
+\newpage
+\section{Measurement results}
+\label{sec:Measurement results}
+
+\subsection{Baseline measurement 1}
+\label{sec:baseline_measurement_1}
+\begin{verbatim}
+~# httperf --server wp_without_naxsi.test.nl --uri /index.php \
+--num-call 1 --rate 230 --num-conn 10000
+httperf --client=0/1 --server=wp_without_naxsi.test.nl --port=80 \
+--uri=/index.php --rate=230 --send-buffer=4096 --recv-buffer=16384 \
+--num-conns=10000 --num-calls=1
+Maximum connect burst length: 1
+
+Total: connections 10000 requests 10000 replies 10000 test-duration 44.164 s
+
+Connection rate: 226.4 conn/s (4.4 ms/conn, <=136 concurrent connections)
+Connection time [ms]: min 0.7 avg 562.7 max 723.3 median 687.5 stddev 255.3
+Connection time [ms]: connect 0.2
+Connection length [replies/conn]: 1.000
+
+Request rate: 226.4 req/s (4.4 ms/req)
+Request size [B]: 86.0
+
+Reply rate [replies/s]: min 203.2 avg 226.7 max 230.2 stddev 9.5 (8 samples)
+Reply time [ms]: response 562.5 transfer 0.0
+Reply size [B]: header 296.0 content 25.0 footer 1.0 (total 322.0)
+Reply status: 1xx=0 2xx=0 3xx=8542 4xx=0 5xx=1458
+
+CPU time [s]: user 1.30 system 42.87 (user 2.9% system 97.1% total 100.0%)
+Net I/O: 90.3 KB/s (0.7*10^6 bps)
+
+Errors: total 0 client-timo 0 socket-timo 0 connrefused 0 connreset 0
+Errors: fd-unavail 0 addrunavail 0 ftab-full 0 other 0
+\end{verbatim}
+
+\subsection{Baseline measurement 2}
+\label{sec:baseline_measurement_2}
+\begin{verbatim}
+# httperf --server wp_without_naxsi.test.nl --uri /index.php --num-call 1 \
+--rate 190 --num-conn 10000
+httperf --client=0/1 --server=wp_without_naxsi.test.nl --port=80 \
+--uri=/index.php --rate=190 --send-buffer=4096 --recv-buffer=16384 \ 
+--num-conns=10000 --num-calls=1
+Maximum connect burst length: 1
+
+Total: connections 10000 requests 10000 replies 10000 test-duration 52.656 s
+
+Connection rate: 189.9 conn/s (5.3 ms/conn, <=10 concurrent connections)
+Connection time [ms]: min 28.0 avg 31.8 max 51.9 median 31.5 stddev 2.0
+Connection time [ms]: connect 0.2
+Connection length [replies/conn]: 1.000
+
+Request rate: 189.9 req/s (5.3 ms/req)
+Request size [B]: 86.0
+
+Reply rate [replies/s]: min 188.8 avg 189.9 max 190.2 stddev 0.4 (10 samples)
+Reply time [ms]: response 31.6 transfer 0.0
+Reply size [B]: header 321.0 content 0.0 footer 2.0 (total 323.0)
+Reply status: 1xx=0 2xx=0 3xx=10000 4xx=0 5xx=0
+
+CPU time [s]: user 8.93 system 43.73 (user 17.0% system 83.0% total 100.0%)
+Net I/O: 75.5 KB/s (0.6*10^6 bps)
+
+Errors: total 0 client-timo 0 socket-timo 0 connrefused 0 connreset 0
+Errors: fd-unavail 0 addrunavail 0 ftab-full 0 other 0
+
+\end{verbatim}
+\end{document}
+
