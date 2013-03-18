@@ -1,19 +1,19 @@
-\contentsline {section}{\numberline {1}Introduction}{2}
-\contentsline {subsection}{\numberline {1.1}Research question}{2}
+\contentsline {section}{\numberline {1}Introduction}{1}
+\contentsline {subsection}{\numberline {1.1}Research question}{1}
 \contentsline {section}{\numberline {2}Naxsi}{2}
-\contentsline {subsection}{\numberline {2.1}Request flow}{3}
-\contentsline {section}{\numberline {3}Methods}{3}
-\contentsline {subsection}{\numberline {3.1}Experimental setup}{4}
+\contentsline {subsection}{\numberline {2.1}Request flow}{2}
+\contentsline {section}{\numberline {3}Methods}{2}
+\contentsline {subsection}{\numberline {3.1}Experimental setup}{3}
 \contentsline {subsection}{\numberline {3.2}Performance measurement tools}{4}
-\contentsline {subsubsection}{\numberline {3.2.1}Collectd}{5}
-\contentsline {subsection}{\numberline {3.3}Measurement metrics}{5}
+\contentsline {subsubsection}{\numberline {3.2.1}Collectd}{4}
+\contentsline {subsection}{\numberline {3.3}Measurement metrics}{4}
 \contentsline {subsubsection}{\numberline {3.3.1}Raw Naxsi performance test}{5}
 \contentsline {subsubsection}{\numberline {3.3.2}Naxsi performance test with back-end server}{5}
-\contentsline {section}{\numberline {4}Measurements}{6}
-\contentsline {subsection}{\numberline {4.1}Baseline performance measurement}{6}
-\contentsline {subsection}{\numberline {4.2}Naxsi performance measurement}{7}
-\contentsline {section}{\numberline {5}Results}{7}
-\contentsline {section}{\numberline {6}Conclusion}{7}
+\contentsline {section}{\numberline {4}Measurements}{5}
+\contentsline {subsection}{\numberline {4.1}Baseline performance measurement}{5}
+\contentsline {subsection}{\numberline {4.2}Naxsi performance measurement}{6}
+\contentsline {section}{\numberline {5}Results}{6}
+\contentsline {section}{\numberline {6}Conclusion}{6}
 \contentsline {section}{\numberline {A}Acronyms and abbreviations}{8}
 \contentsline {section}{\numberline {B}Experimental setup}{9}
 \contentsline {subsection}{\numberline {B.1}Hardware}{9}
