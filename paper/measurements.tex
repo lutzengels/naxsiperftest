@@ -31,8 +31,9 @@ By using a half-interval search method, the optimal number of concurrent connect
 \label{fig:Baseline measurement 2}
 \end{table}
 
-Based on the values derived from the measurement above, the performance is measured by stepping through the concurrent connections from 1 to 190. The response time is calculated by taking the average of each measurement of  each step. Each step has a measurement duration of 10 seconds. 
+Based on the values derived from the measurement above, the performance is measured by stepping through the concurrent connections from 1 to 190. The response time is calculated by taking the average of each measurement of  each step. Each step has a measurement duration of 60 seconds. 
 
+% autobench --single_host --host1 wp_without_naxsi.test.nl --uri1 /index.php --low_rate 1 --high_rate 230 --rate_step 1 --num_call 1 --const_test_time 60 --file results.csv
 \begin{figure}[h]
 \caption{Autobench baseline performance measurement}
 \centering
@@ -48,9 +49,6 @@ When staying under 190 concurrent connections, the response time is $\approx 30 
 \includegraphics[scale=0.4] {images/results/baseline/cpu.png}
 \label{fig:Baseline performance measurement}
 \end{figure}
-
-% autobench --single_host --host1 wp_without_naxsi.test.nl --uri1 /index.php --low_rate 1 --high_rate 230 --rate_step 1 --num_call 1 --const_test_time 10 --file results.csv
-
 
 \subsection{Naxsi performance measurement}
 \end{document}

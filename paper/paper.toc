@@ -13,9 +13,9 @@
 \contentsline {subsubsection}{\numberline {3.3.2}Naxsi performance test with back-end server}{6}
 \contentsline {section}{\numberline {4}Measurements}{6}
 \contentsline {subsection}{\numberline {4.1}Baseline performance measurement}{6}
-\contentsline {subsection}{\numberline {4.2}Naxsi performance measurement}{7}
-\contentsline {section}{\numberline {5}Results}{7}
-\contentsline {section}{\numberline {6}Conclusion}{7}
+\contentsline {subsection}{\numberline {4.2}Naxsi performance measurement}{8}
+\contentsline {section}{\numberline {5}Results}{8}
+\contentsline {section}{\numberline {6}Conclusion}{8}
 \contentsline {section}{\numberline {A}Acronyms and abbreviations}{9}
 \contentsline {section}{\numberline {B}Experimental setup}{10}
 \contentsline {subsection}{\numberline {B.1}Hardware}{10}
