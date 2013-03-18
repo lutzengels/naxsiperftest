@@ -19,14 +19,40 @@
 % Define colors
 \definecolor{gray}{gray}{0.8}
 
-\title{Naxsi performance}
-
-\author{Lutz Engels, Dennis Pellikaan \\ University of Amsterdam}
-
 \begin{document}
-\maketitle
+%\maketitle
+\begin{titlepage}
+\begin{center}
+% Upper part of the page
+\includegraphics[width=0.15\textwidth]{images/uva-logo.png}\\[1cm]
+\textsc{\LARGE University of Amsterdam}\\[0.5cm]
+\textsc{\Large System \& Network Engineering}\\[2cm]
+{\huge \bfseries Naxsi performance measurement}\\[0.2cm]
+%{Draft report}\\[0.4cm]
+{\large \today}\\
+\end{center}
+
+\vfill
+% Bottom of the page
+
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Authors:}\\
+\textsc{Dennis Pellikaan}\\
+\textsc{Lutz Engels}\\[1cm]
+\end{flushleft}
+\end{minipage}
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright} \large
+\mbox{ }\\
+dennis.pellikaan@os3.nl\\
+lutz.engelsn@os3.nl\\
+\end{flushright}
+\end{minipage}
+\end{titlepage}
 
 \subfile{abstract.tex}
+\newpage
 \tableofcontents
 \subfile{introduction.tex}
 \subfile{naxsi.tex}
