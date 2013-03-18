@@ -5,10 +5,11 @@
 \contentsline {section}{\numberline {3}Methods}{3}
 \contentsline {subsection}{\numberline {3.1}Experimental setup}{4}
 \contentsline {subsection}{\numberline {3.2}Performance measurement tools}{4}
+\contentsline {subsubsection}{\numberline {3.2.1}Collectd}{5}
 \contentsline {subsection}{\numberline {3.3}Measurement metrics}{5}
 \contentsline {subsubsection}{\numberline {3.3.1}Raw Naxsi performance test}{5}
 \contentsline {subsubsection}{\numberline {3.3.2}Naxsi performance test with back-end server}{5}
-\contentsline {section}{\numberline {4}Measurements}{5}
+\contentsline {section}{\numberline {4}Measurements}{6}
 \contentsline {subsection}{\numberline {4.1}Baseline performance measurement}{6}
 \contentsline {subsection}{\numberline {4.2}Naxsi performance measurement}{7}
 \contentsline {section}{\numberline {5}Results}{7}
