@@ -1,12 +1,12 @@
-% autobench --single_host --host1 with_naxsi.test.nl --uri1 /index.php --low_rate 1 --high_rate 130  --rate_step 5 --const_test_time 30  --file results.csv
-
 \documentclass[Measurements]{subfiles}
 \begin{document}
 \section{Measurements}
+
 \label{sec:Measurements}
 Basically, there are two main different scenarios for measuring the performance. The first one is by measuring the performance of Nginx when Naxsi is disabled. The second one is by measure the performance when Naxsi is enabled. First, a baseline performance measurement is performed. The baseline is used as a reference for the other performance measurements. Second, the performance of Naxsi is measurement by changing the number of rules.
 
 \subsection{Baseline performance measurement}
+\label{sec:Baseline performance measurement}
 In order to measure the performance of Naxsi, it is important to know the bottleneck of the back-end server doing all the processing at the application layer. Figure \ref{fig:Baseline measurement 1} shows that $\approx 21\%$ of the 10,000 requests produce a \verb+HTTP 5xx+ response when using 250 concurrent connections. Details can be found in appendix \ref{sec:baseline_measurement_1}
 
 \begin{table}[!h]
@@ -74,6 +74,8 @@ When staying under 190 concurrent connections, the response time is \mbox{$\appr
 \subsection{Naxsi performance measurement}
 
 After enabling Naxsi in \verb+/etc/nginx/nginx.conf+ and after reloading Nginx, it is possible to do the performance measurement of Nginx combined with Naxsi. Details about how to enable Naxsi can be found in appendix \ref{sec:server01_configuration}. All Naxsi performance measurements include the Naxsi core rules. Because Naxsi uses a white listing mechanism, the performance test of Naxsi is measured by incrementing the number of rules on the site level configuration. Each request should be passed through the white list and based on the final score, Naxsi either allows or denies the request. The denied request, in this setup, simply returns an \verb+HTTP 403+ error code. Both \verb+/var/log/nginx/access.log+ and \verb+/var/log/nginx/error.log+ can be monitored to see what Naxsi does with the request.
+
+As explained in section \ref{sec:naxsi_whitelist}, Naxsi efficiently processes the white list rules with use of hash buckets. Therefore, the performance has no measurable difference compared to the measurement that is done without Naxsi being enabled. The number of request per second stay the same, because the back-end server is still the bottle-neck. The CPU, memory, network and interface usage are equal to that of the previous measurement.
 
 \subsubsection{Naxsi zero rules}
 The initial performane measure with Naxsi includes only a simple subset of site rules. Details can be found in appendix \ref{sec:Naxsi measurement 1}.
