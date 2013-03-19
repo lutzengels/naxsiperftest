@@ -66,7 +66,21 @@ Net I/O: 75.5 KB/s (0.6*10^6 bps)
 
 Errors: total 0 client-timo 0 socket-timo 0 connrefused 0 connreset 0
 Errors: fd-unavail 0 addrunavail 0 ftab-full 0 other 0
-
 \end{verbatim}
+
+\subsection{Naxsi measurement 1}
+\label{sec:Naxsi measurement 1}
+\begin{lstlisting}[frame=single,caption=/etc/nginx/nbs.rules,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+SecRulesEnabled;
+DeniedUrl "/RequestDenied";
+
+## check rules
+CheckRule "$SQL >= 8" BLOCK;
+CheckRule "$RFI >= 8" BLOCK;
+CheckRule "$TRAVERSAL >= 4" BLOCK;
+CheckRule "$EVADE >= 4" BLOCK;
+CheckRule "$XSS >= 8" BLOCK;
+\end{lstlisting}
+
 \end{document}
 
