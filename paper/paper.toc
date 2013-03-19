@@ -6,26 +6,27 @@
 \contentsline {subsection}{\numberline {3.1}Experimental setup}{5}
 \contentsline {subsection}{\numberline {3.2}Performance measurement tools}{5}
 \contentsline {subsubsection}{\numberline {3.2.1}Apache Benchmark}{6}
-\contentsline {subsubsection}{\numberline {3.2.2}Autobench}{6}
-\contentsline {subsubsection}{\numberline {3.2.3}Collectd}{6}
+\contentsline {subsubsection}{\numberline {3.2.2}Httperf}{6}
+\contentsline {subsubsection}{\numberline {3.2.3}Autobench}{6}
+\contentsline {subsubsection}{\numberline {3.2.4}Collectd}{6}
 \contentsline {subsection}{\numberline {3.3}Measurement metrics}{6}
-\contentsline {subsubsection}{\numberline {3.3.1}Raw Naxsi performance test}{6}
-\contentsline {subsubsection}{\numberline {3.3.2}Naxsi performance test with back-end server}{6}
+\contentsline {subsubsection}{\numberline {3.3.1}Raw Naxsi performance test}{7}
+\contentsline {subsubsection}{\numberline {3.3.2}Naxsi performance test with back-end server}{7}
 \contentsline {section}{\numberline {4}Measurements}{7}
 \contentsline {subsection}{\numberline {4.1}Baseline performance measurement}{7}
-\contentsline {subsection}{\numberline {4.2}Naxsi performance measurement}{8}
-\contentsline {section}{\numberline {5}Results}{8}
-\contentsline {section}{\numberline {6}Conclusion}{8}
-\contentsline {section}{\numberline {A}Acronyms and abbreviations}{9}
-\contentsline {section}{\numberline {B}Experimental setup}{10}
-\contentsline {subsection}{\numberline {B.1}Hardware}{10}
-\contentsline {subsection}{\numberline {B.2}Configuration}{11}
-\contentsline {subsubsection}{\numberline {B.2.1}server01, server02, server03 and server04}{11}
-\contentsline {subsubsection}{\numberline {B.2.2}sever01}{12}
-\contentsline {subsubsection}{\numberline {B.2.3}server02}{16}
-\contentsline {subsubsection}{\numberline {B.2.4}server03}{20}
-\contentsline {subsubsection}{\numberline {B.2.5}server04}{21}
-\contentsline {subsubsection}{\numberline {B.2.6}server05}{22}
-\contentsline {section}{\numberline {C}Measurement results}{25}
-\contentsline {subsection}{\numberline {C.1}Baseline measurement 1}{25}
-\contentsline {subsection}{\numberline {C.2}Baseline measurement 2}{25}
+\contentsline {subsection}{\numberline {4.2}Naxsi performance measurement}{9}
+\contentsline {section}{\numberline {5}Results}{9}
+\contentsline {section}{\numberline {6}Conclusion}{9}
+\contentsline {section}{\numberline {A}Acronyms and abbreviations}{10}
+\contentsline {section}{\numberline {B}Experimental setup}{11}
+\contentsline {subsection}{\numberline {B.1}Hardware}{11}
+\contentsline {subsection}{\numberline {B.2}Configuration}{12}
+\contentsline {subsubsection}{\numberline {B.2.1}server01, server02, server03 and server04}{12}
+\contentsline {subsubsection}{\numberline {B.2.2}sever01}{13}
+\contentsline {subsubsection}{\numberline {B.2.3}server02}{17}
+\contentsline {subsubsection}{\numberline {B.2.4}server03}{21}
+\contentsline {subsubsection}{\numberline {B.2.5}server04}{22}
+\contentsline {subsubsection}{\numberline {B.2.6}server05}{23}
+\contentsline {section}{\numberline {C}Measurement results}{26}
+\contentsline {subsection}{\numberline {C.1}Baseline measurement 1}{26}
+\contentsline {subsection}{\numberline {C.2}Baseline measurement 2}{26}
