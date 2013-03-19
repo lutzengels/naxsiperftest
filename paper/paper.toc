@@ -8,10 +8,18 @@
 \contentsline {subsection}{\numberline {3.1}Experimental setup}{5}
 \contentsline {subsection}{\numberline {3.2}Performance measurement tools}{6}
 \contentsline {subsubsection}{\numberline {3.2.1}Apache Benchmark}{6}
+<<<<<<< HEAD
 \contentsline {subsubsection}{\numberline {3.2.2}Autobench}{6}
 \contentsline {subsubsection}{\numberline {3.2.3}Collectd}{6}
 \contentsline {subsubsection}{\numberline {3.2.4}Raw Naxsi performance test}{6}
 \contentsline {subsubsection}{\numberline {3.2.5}Naxsi performance test with back-end server}{6}
+=======
+\contentsline {subsubsection}{\numberline {3.2.2}Httperf}{6}
+\contentsline {subsubsection}{\numberline {3.2.3}Autobench}{6}
+\contentsline {subsubsection}{\numberline {3.2.4}Collectd}{6}
+\contentsline {subsubsection}{\numberline {3.2.5}Raw Naxsi performance test}{7}
+\contentsline {subsubsection}{\numberline {3.2.6}Naxsi performance test with back-end server}{7}
+>>>>>>> 6c9d7e46f79ac12a76e6cc7b2350dbb47d9cdb8c
 \contentsline {section}{\numberline {4}Measurements}{7}
 \contentsline {subsection}{\numberline {4.1}Baseline performance measurement}{7}
 \contentsline {subsection}{\numberline {4.2}Naxsi performance measurement}{10}
