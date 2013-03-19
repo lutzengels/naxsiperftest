@@ -146,6 +146,7 @@ exit 0
 \end{lstlisting}
 
 \subsubsection{sever01}
+\label{sec:server01_configuration}
 
 \begin{lstlisting}[frame=single,caption=/etc/udev/rules.d/70-persistent-net.rules,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
 KERNEL=="eth*", ATTR{address}=="b8:ac:6f:8b:81:bd", NAME="eth0"
@@ -245,21 +246,24 @@ mkdir -p /var/lib/nginx/body
 \end{lstlisting}
 
 \begin{lstlisting}[frame=single,caption=/etc/nginx/nginx.conf,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
-orker_processes  8;
+worker_processes  1;
 
 events {
     worker_connections  1024;
 }
 
 http {
-    include       mime.types;
-    default_type  application/octet-stream;
+    # Uncomment to enable Naxsi core rules
+    #include            /etc/nginx/naxsi_core.rules;
 
-    sendfile        on;
+    include            mime.types;
+    default_type       application/octet-stream;
+
+    sendfile           on;
 
     keepalive_timeout  65;
 
-    include /etc/nginx/sites-enabled/*;
+    include            /etc/nginx/sites-enabled/*;
 }
 \end{lstlisting}
 
@@ -288,6 +292,7 @@ TO BE INCLUDED WHEN WORKING
 \end{lstlisting}
 
 \subsubsection{server02}
+\label{sec:server02_configuration}
 
 %Mainly based on \url{http://library.linode.com/web-servers/nginx/php-fastcgi/debian-6-squeeze}
 
@@ -358,11 +363,16 @@ server {
   server_name           wp_with_naxsi.test.nl;
 
   location / {
+    include             /etc/nginx/nbs.rules;
     proxy_pass          http://wordpress;
     proxy_redirect      off;
     proxy_set_header    Host             $host;
     proxy_set_header    X-Real-IP        $remote_addr;
     proxy_set_header    X-Forwarded-For  $proxy_add_x_forwarded_for;
+  }
+
+  location /RequestDenied {
+	return 403;
   }
 }
 \end{lstlisting}
@@ -386,7 +396,7 @@ PHP5=/usr/bin/php5-cgi
 
 \begin{lstlisting}[frame=single,caption=/etc/nginx/nginx.conf,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
 user www-data;
-worker_processes  8;
+worker_processes  1;
 
 events {
     worker_connections  1024;
@@ -481,6 +491,7 @@ update-rc.d php-fastcgi defaults
 \end{lstlisting}
 
 \subsubsection{server03}
+\label{sec:server03_configuration}
 
 \begin{lstlisting}[frame=single,caption=/etc/network/interfaces,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
 auto lo
@@ -525,6 +536,7 @@ Query OK, 0 rows affected (0.00 sec)
 \end{lstlisting}
 
 \subsubsection{server04}
+\label{sec:server02_configuration}
 
 \begin{lstlisting}[frame=single,caption=/etc/network/interfaces,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
 auto lo

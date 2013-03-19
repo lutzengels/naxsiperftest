@@ -1,5 +1,6 @@
 \contentsline {section}{\numberline {1}Introduction}{3}
 \contentsline {subsection}{\numberline {1.1}Research question}{3}
+\contentsline {subsubsection}{\numberline {1.1.1}Sub questions}{3}
 \contentsline {section}{\numberline {2}Naxsi}{3}
 \contentsline {subsection}{\numberline {2.1}Request flow}{4}
 \contentsline {section}{\numberline {3}Methods}{4}
@@ -9,24 +10,26 @@
 \contentsline {subsubsection}{\numberline {3.2.2}Httperf}{6}
 \contentsline {subsubsection}{\numberline {3.2.3}Autobench}{6}
 \contentsline {subsubsection}{\numberline {3.2.4}Collectd}{6}
-\contentsline {subsection}{\numberline {3.3}Measurement metrics}{6}
-\contentsline {subsubsection}{\numberline {3.3.1}Raw Naxsi performance test}{7}
-\contentsline {subsubsection}{\numberline {3.3.2}Naxsi performance test with back-end server}{7}
+\contentsline {subsubsection}{\numberline {3.2.5}Raw Naxsi performance test}{6}
+\contentsline {subsubsection}{\numberline {3.2.6}Naxsi performance test with back-end server}{6}
 \contentsline {section}{\numberline {4}Measurements}{7}
 \contentsline {subsection}{\numberline {4.1}Baseline performance measurement}{7}
-\contentsline {subsection}{\numberline {4.2}Naxsi performance measurement}{9}
-\contentsline {section}{\numberline {5}Results}{9}
-\contentsline {section}{\numberline {6}Conclusion}{9}
-\contentsline {section}{\numberline {A}Acronyms and abbreviations}{10}
-\contentsline {section}{\numberline {B}Experimental setup}{11}
-\contentsline {subsection}{\numberline {B.1}Hardware}{11}
-\contentsline {subsection}{\numberline {B.2}Configuration}{12}
-\contentsline {subsubsection}{\numberline {B.2.1}server01, server02, server03 and server04}{12}
-\contentsline {subsubsection}{\numberline {B.2.2}sever01}{13}
-\contentsline {subsubsection}{\numberline {B.2.3}server02}{17}
-\contentsline {subsubsection}{\numberline {B.2.4}server03}{21}
-\contentsline {subsubsection}{\numberline {B.2.5}server04}{22}
-\contentsline {subsubsection}{\numberline {B.2.6}server05}{23}
-\contentsline {section}{\numberline {C}Measurement results}{26}
-\contentsline {subsection}{\numberline {C.1}Baseline measurement 1}{26}
-\contentsline {subsection}{\numberline {C.2}Baseline measurement 2}{26}
+\contentsline {subsection}{\numberline {4.2}Naxsi performance measurement}{10}
+\contentsline {subsubsection}{\numberline {4.2.1}Naxsi zero rules}{11}
+\contentsline {subsection}{\numberline {4.3}Naxsi performance measurement}{11}
+\contentsline {section}{\numberline {5}Results}{11}
+\contentsline {section}{\numberline {6}Conclusion}{11}
+\contentsline {section}{\numberline {A}Acronyms and abbreviations}{12}
+\contentsline {section}{\numberline {B}Experimental setup}{13}
+\contentsline {subsection}{\numberline {B.1}Hardware}{13}
+\contentsline {subsection}{\numberline {B.2}Configuration}{14}
+\contentsline {subsubsection}{\numberline {B.2.1}server01, server02, server03 and server04}{14}
+\contentsline {subsubsection}{\numberline {B.2.2}sever01}{15}
+\contentsline {subsubsection}{\numberline {B.2.3}server02}{19}
+\contentsline {subsubsection}{\numberline {B.2.4}server03}{23}
+\contentsline {subsubsection}{\numberline {B.2.5}server04}{24}
+\contentsline {subsubsection}{\numberline {B.2.6}server05}{25}
+\contentsline {section}{\numberline {C}Measurement results}{28}
+\contentsline {subsection}{\numberline {C.1}Baseline measurement 1}{28}
+\contentsline {subsection}{\numberline {C.2}Baseline measurement 2}{28}
+\contentsline {subsection}{\numberline {C.3}Naxsi measurement 1}{29}
