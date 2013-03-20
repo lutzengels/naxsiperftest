@@ -6,37 +6,33 @@
 \contentsline {subsection}{\numberline {2.2}Whitelist processing}{4}
 \contentsline {section}{\numberline {3}Methods}{4}
 \contentsline {subsection}{\numberline {3.1}Experimental setup}{5}
-\contentsline {subsection}{\numberline {3.2}Performance measurement tools}{6}
+\contentsline {subsection}{\numberline {3.2}Performance measurement tools}{5}
 \contentsline {subsubsection}{\numberline {3.2.1}Apache Benchmark}{6}
-<<<<<<< HEAD
-\contentsline {subsubsection}{\numberline {3.2.2}Autobench}{6}
-\contentsline {subsubsection}{\numberline {3.2.3}Collectd}{6}
-\contentsline {subsubsection}{\numberline {3.2.4}Raw Naxsi performance test}{6}
-\contentsline {subsubsection}{\numberline {3.2.5}Naxsi performance test with back-end server}{6}
-=======
 \contentsline {subsubsection}{\numberline {3.2.2}Httperf}{6}
 \contentsline {subsubsection}{\numberline {3.2.3}Autobench}{6}
 \contentsline {subsubsection}{\numberline {3.2.4}Collectd}{6}
 \contentsline {subsubsection}{\numberline {3.2.5}Raw Naxsi performance test}{7}
 \contentsline {subsubsection}{\numberline {3.2.6}Naxsi performance test with back-end server}{7}
->>>>>>> 6c9d7e46f79ac12a76e6cc7b2350dbb47d9cdb8c
 \contentsline {section}{\numberline {4}Measurements}{7}
-\contentsline {subsection}{\numberline {4.1}Baseline performance measurement}{7}
-\contentsline {subsection}{\numberline {4.2}Naxsi performance measurement}{10}
-\contentsline {subsubsection}{\numberline {4.2.1}Naxsi zero rules}{11}
-\contentsline {subsection}{\numberline {4.3}Naxsi performance measurement}{11}
-\contentsline {section}{\numberline {5}Results}{11}
-\contentsline {section}{\numberline {6}Conclusion}{11}
-\contentsline {section}{\numberline {A}Acronyms and abbreviations}{12}
-\contentsline {section}{\numberline {B}Experimental setup}{13}
-\contentsline {subsection}{\numberline {B.1}Hardware}{13}
-\contentsline {subsection}{\numberline {B.2}Configuration}{14}
-\contentsline {subsubsection}{\numberline {B.2.1}server01, server02, server03 and server04}{14}
-\contentsline {subsubsection}{\numberline {B.2.2}server02}{20}
-\contentsline {subsubsection}{\numberline {B.2.3}server03}{24}
-\contentsline {subsubsection}{\numberline {B.2.4}server04}{25}
-\contentsline {subsubsection}{\numberline {B.2.5}server05}{26}
-\contentsline {section}{\numberline {C}Measurement results}{29}
-\contentsline {subsection}{\numberline {C.1}Baseline measurement 1}{29}
-\contentsline {subsection}{\numberline {C.2}Baseline measurement 2}{29}
-\contentsline {subsection}{\numberline {C.3}Naxsi measurement 1}{30}
+\contentsline {subsection}{\numberline {4.1}Performance measurement with Wordpress back-end}{7}
+\contentsline {subsubsection}{\numberline {4.1.1}Baseline performance measurement}{7}
+\contentsline {subsubsection}{\numberline {4.1.2}Naxsi performance measurement}{10}
+\contentsline {subsection}{\numberline {4.2}Performance measurement without back-end}{11}
+\contentsline {subsubsection}{\numberline {4.2.1}Nginx baseline perfomance measurement}{12}
+\contentsline {subsubsection}{\numberline {4.2.2}HTTP 200 with Naxsi compiled}{15}
+\contentsline {subsubsection}{\numberline {4.2.3}HTTP 200 with Naxsi core rules configured}{18}
+\contentsline {section}{\numberline {5}Results}{20}
+\contentsline {section}{\numberline {6}Conclusion}{20}
+\contentsline {section}{\numberline {A}Acronyms and abbreviations}{21}
+\contentsline {section}{\numberline {B}Experimental setup}{22}
+\contentsline {subsection}{\numberline {B.1}Hardware}{22}
+\contentsline {subsection}{\numberline {B.2}Configuration}{23}
+\contentsline {subsubsection}{\numberline {B.2.1}server01, server02, server03 and server04}{23}
+\contentsline {subsubsection}{\numberline {B.2.2}server02}{29}
+\contentsline {subsubsection}{\numberline {B.2.3}server03}{33}
+\contentsline {subsubsection}{\numberline {B.2.4}server04}{34}
+\contentsline {subsubsection}{\numberline {B.2.5}server05}{35}
+\contentsline {section}{\numberline {C}Measurement results}{38}
+\contentsline {subsection}{\numberline {C.1}Baseline measurement 1}{38}
+\contentsline {subsection}{\numberline {C.2}Baseline measurement 2}{38}
+\contentsline {subsection}{\numberline {C.3}Naxsi measurement 1}{39}
