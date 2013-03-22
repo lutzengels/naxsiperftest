@@ -55,7 +55,16 @@ The Wordpress website is introduced in the measurement to see the effects of a m
 \subsubsection{Performance measurement with Wordpress}
 For the performance measurement when a Wordpress site is active, httperf has proven to be a reliable tool. By measuring the response time of each request and by monitoring the resources on the front-end server, it shows the impact of simply hosting a Wordpress website. This is repeated for both the baseline measurement as for when Naxsi is actively protecting the website.
 
-\subsubsection{Performance measurement with HTTP 200 OK sponse}
+\subsubsection{Performance measurement with HTTP 200 OK response}
 In order to measure the performance when Nginx replies with \verb+HTTP 200 OK+ messages, httperf is not suitable anymore. The number of requests per second exceed the number of concurrents that are realisticly possible. Instead, the Apache benchmark tools are used. However, the number of requests per second are far greater than that of when a Wordpress website is hosted. Because of the high number of concurrent connections, Apache benchmark shows some discrepencies that need to be taken into consideration. Each individual Apache benchmark command is repeated 5 times, also revered to as a round. A set of rounds is called a step. Of each step, the lowest, highest and average values are graphed to show the discrepancies.
+
+In order to measure the impact Naxsi has on processing the content of the request, we focus on the number of URL parameters. Naxsi has to process each parameter and see if it is allowed. Based on the optimal concurrent connections measured during the baseline measurement, the next thing to be looked at is the number of URL parameters.
+
+\begin{verbatim}
+http://200_with_naxsi.test.nl/
+http://200_with_naxsi.test.nl/?foo1=bar1
+http://200_with_naxsi.test.nl/?foo1=bar1&foo2=bar2
+...
+\end{verbatim}
 \end{document}
 
