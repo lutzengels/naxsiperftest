@@ -184,7 +184,7 @@ net.ipv4.tcp_tw_recycle = 1
 \begin{lstlisting}[frame=single,caption=Lines added to /etc/security/limits.conf,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
 * soft nofile 200000
 * hard nofile 200000
-\end{lstlisting
+\end{lstlisting}
 
 \subsubsection{sever01}
 \label{sec:server01_configuration}
@@ -257,7 +257,7 @@ iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 1004 -j DNAT --to-destinati
 iptables -A INPUT -i eth0 -p tcp --dport 80 -j DROP
 \end{lstlisting}
 
-\begin{lstlisting}[frame=single,caption=Compiling nginx+naxsi,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+\begin{lstlisting}[frame=single,caption=Compiling Nginx with Naxsi,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
 wget http://nginx.org/download/nginx-1.2.7.tar.gz
 wget http://naxsi.googlecode.com/files/naxsi-core-0.48.tgz
 tar xvzf naxsi-core-0.48.tgz
@@ -265,6 +265,32 @@ tar xvzf nginx-1.2.7.tar.gz
 cd nginx-1.2.7/
 ./configure --conf-path=/etc/nginx/nginx.conf \
 --add-module=../naxsi-core-0.48/naxsi_src/ \
+--error-log-path=/var/log/nginx/error.log \
+--http-client-body-temp-path=/var/lib/nginx/body \
+--http-fastcgi-temp-path=/var/lib/nginx/fastcgi \
+--http-log-path=/var/log/nginx/access.log \
+--http-proxy-temp-path=/var/lib/nginx/proxy \
+--lock-path=/var/lock/nginx.lock \
+--pid-path=/var/run/nginx.pid \
+--with-http_ssl_module \
+--without-mail_pop3_module \
+--without-mail_smtp_module  \
+--without-mail_imap_module  \
+--without-http_uwsgi_module \
+--without-http_scgi_module \
+--with-ipv6 \
+--prefix=/usr
+make
+make install
+mkdir /etc/nginx/sites-enabled
+mkdir -p /var/lib/nginx/body
+\end{lstlisting}
+
+\begin{lstlisting}[frame=single,caption=Compiling Nginx without Naxsi,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+wget http://nginx.org/download/nginx-1.2.7.tar.gz
+tar xvzf nginx-1.2.7.tar.gz
+cd nginx-1.2.7/
+./configure --conf-path=/etc/nginx/nginx.conf \
 --error-log-path=/var/log/nginx/error.log \
 --http-client-body-temp-path=/var/lib/nginx/body \
 --http-fastcgi-temp-path=/var/lib/nginx/fastcgi \

@@ -47,9 +47,15 @@ A variety of performance measurement tools (also called benchmarking tools) exis
 \subsubsection{Collectd}
 \input{methods_tools_collectd}
 
-\subsubsection{Raw Naxsi performance test}
+\subsubsection{Performance measurements}
+The performance measurement is done in two phases. The first phase is to measure the baseline performance of the Nginx webserver without Naxsi compiled into it. These measurements are needed to later see the overhead when Naxsi is enabled, as is done in the second phase. In both phases the performance is measured with a Wordpress website on a back-end server and when the Nginx server simply returns an \verb+HTTP 200 OK+ reponse. Details of how the Nginx server is compiled with Naxsi or without can be found in \ref{{sec:server01_configuration}}.
 
-\subsubsection{Naxsi performance test with back-end server}
-Based on the \ac{CMS} popularity measurements of March 1st by w3techs \footnote{\url{http://w3techs.com/technologies/overview/content_management/all}}, Wordpress is chosen as the web application. According to their survey, 17,4 \% of all web servers run Wordpress and it holds 54,6 \% of the CMS market share. Wordpress has, by far, the greatests market share and is therefore a popular target for cyber criminals.
+The Wordpress website is introduced in the measurement to see the effects of a more realistic scenario. Based on the \ac{CMS} popularity measurements of March 1st by w3techs \footnote{\url{http://w3techs.com/technologies/overview/content_management/all}}, Wordpress is chosen as the web application. According to their survey, 17,4 \% of all web servers run Wordpress and it holds 54,6 \% of the CMS market share. Wordpress has, by far, the greatests market share and is therefore a popular target for cyber criminals. Naxsi, of course, should block most of these cyber attacks.
+
+\subsubsection{Performance measurement with Wordpress}
+For the performance measurement when a Wordpress site is active, httperf has proven to be a reliable tool. By measuring the response time of each request and by monitoring the resources on the front-end server, it shows the impact of simply hosting a Wordpress website. This is repeated for both the baseline measurement as for when Naxsi is actively protecting the website.
+
+\subsubsection{Performance measurement with HTTP 200 OK sponse}
+In order to measure the performance when Nginx replies with \verb+HTTP 200 OK+ messages, httperf is not suitable anymore. The number of requests per second exceed the number of concurrents that are realisticly possible. Instead, the Apache benchmark tools are used. However, the number of requests per second are far greater than that of when a Wordpress website is hosted. Because of the high number of concurrent connections, Apache benchmark shows some discrepencies that need to be taken into consideration. Each individual Apache benchmark command is repeated 5 times, also revered to as a round. A set of rounds is called a step. Of each step, the lowest, highest and average values are graphed to show the discrepancies.
 \end{document}
 

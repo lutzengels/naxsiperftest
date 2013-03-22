@@ -1,0 +1,63 @@
+\documentclass[Scripts]{subfiles}
+\begin{document}
+\section{Scripts}
+\label{sec:Scripts}
+\begin{lstlisting}[frame=single,caption=bench.pl,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use Switch;
+use Time::Local;
+
+my $url;
+my $rounds;
+my $step;
+my $duration;
+my $low_con;
+my $high_con;
+my $file;
+my $to_file = 0;
+
+for (my $i=0; $i <= $#ARGV; $i++) {
+        switch ($ARGV[$i]) {
+                case '--step' {
+                        $step = $ARGV[$i + 1];
+                }
+                case '--duration' {
+                        $duration = $ARGV[$i + 1];
+                }
+                case '--rounds' {
+                        $rounds = $ARGV[$i + 1];
+                }
+                case '--low_con' {
+                        $low_con = $ARGV[$i + 1];
+                }
+                case '--high_con' {
+                        $high_con = $ARGV[$i + 1];
+                }
+                case '--file' {
+                        $file = $ARGV[$i + 1];
+                        $to_file = 1;
+                }
+        }
+}
+
+$url = $ARGV[$#ARGV];
+
+if (!defined ($step) || !defined ($duration) || !defined ($rounds) || !defined ($low_con) || !defined ($high_con) || !defined ($url)) {
+        print ("Usage: \./bench.pl options http://hostname[:port]/path\n");
+        print ("Options are:\n");
+        print ("\t--step\t\tNumber of concurrent connection to increment each step with\n");
+        print ("\t--duration\tSeconds to max. wait for sponses for each round. ab implies -n 50000\n");
+        print ("\t--rounds\tNumber of rounds to repeat each test\n");
+        print ("\t--low_con\tNumber of concurrent connections to start with\n");
+        print ("\t--high_con\tNumber of concurrent connection to end with\n");
+        print ("\t--file\tOutput to file. Otherwise to screen\n");
+
+        exit (-1);
+}
+
+\end{lstlisting}
+\end{document}
+

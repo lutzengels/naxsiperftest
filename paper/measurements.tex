@@ -3,15 +3,16 @@
 \section{Measurements}
 
 \label{sec:Measurements}
-Basically, there are two main different scenarios for measuring the performance. The first one is by measuring the performance of Nginx when Naxsi is disabled. The second one is by measure the performance when Naxsi is enabled. First, a baseline performance measurement is performed. The baseline is used as a reference for the other performance measurements. Second, the performance of Naxsi is measurement by changing the number of rules.
+Basically, there are two main different scenarios for measuring the performance. The first one is by measuring the performance of Nginx when Naxsi is disabled. The second one is by measure the performance when Naxsi is enabled.  In the first measurement scenario, the performance is measured as baseline. First a baseline measurement is performed with a Wordpress website on a back-end server. Second, the performance a baseline is measured where Nginx only returns a \verb+HTTP 200 OK+ response. This latter baseline measurement gives the lowest overhead and maximum performance of the Nginx webserver.
 
-\subsection{Performance measurement with Wordpress back-end}
+\subsection{Baseline performance measurement without Naxsi}
+The baseline performance measurements are used as a reference for comparing later measurement results when Naxsi is enabled.
 
-\subsubsection{Baseline performance measurement}
+\subsubsection{Wordpress}
 \label{sec:Baseline performance measurement}
-In order to measure the performance of Naxsi, it is important to know the bottleneck of the back-end server doing all the processing at the application layer. Figure \ref{fig:Baseline measurement 1} shows that $\approx 21\%$ of the 10,000 requests produce a \verb+HTTP 5xx+ response when using 250 concurrent connections. Details can be found in appendix \ref{sec:baseline_measurement_1}
+In order to measure the performance of Naxsi, it is important to know the bottleneck of the back-end server doing all the processing at the application layer. Figure \ref{fig:Baseline measurement 1} shows that $\approx 21\%$ of the 10,000 requests produce a \verb+HTTP 5xx+ response when using 250 concurrent connections. Details can be found in appendix \ref{sec:baseline_measurement_1}.
 
-\begin{table}[!h]
+\begin{table}[H]
 \caption{Baseline measurement 1}
 \begin{tabular}{|p{2cm}|p{1,5cm}|p{1,5cm}|p{1,5cm}|p{1,5cm}|p{1,5cm}|}
 \hline
@@ -39,7 +40,7 @@ Based on the values derived from the measurement above, the performance is measu
 \begin{figure}[H]
 \caption{Autobench baseline performance measurement}
 \centering
-\includegraphics[scale=0.55] {images/results/baseline/output.png}
+\includegraphics[scale=0.55] {images/results/baseline_wp/output.png}
 \label{fig:Baseline performance measurement}
 \end{figure}
 
@@ -47,152 +48,83 @@ When staying under 190 concurrent connections, the response time is \mbox{$\appr
 
 \begin{figure}[H]
 \centering
-\caption{Baseline Nginx CPU usage}
-\includegraphics[scale=0.7]{images/results/baseline/cpu.png}
+\caption{Wordpress baseline CPU usage}
+\includegraphics[scale=0.7]{images/results/baseline_wp/cpu.png}
 \label{fig:Baseline Nginx CPU usage}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\caption{Baseline Nginx memory usage}
-\includegraphics[scale=0.7]{images/results/baseline/memory.png}
+\caption{Wordpress baseline memory usage}
+\includegraphics[scale=0.7]{images/results/baseline_wp/memory.png}
 \label{fig:Baseline Nginx memory usage}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\caption{Baseline Nginx disk traffic}
-\includegraphics[scale=0.7]{images/results/baseline/disk.png}
+\caption{Wordpress baseline disk traffic}
+\includegraphics[scale=0.7]{images/results/baseline_wp/disk.png}
 \label{fig:Baseline Nginx disk traffic}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\caption{Baseline Nginx interface traffic}
-\includegraphics[scale=0.7]{images/results/baseline/interface.png}
+\caption{Wordpress baseline interface traffic}
+\includegraphics[scale=0.7]{images/results/baseline_wp/interface.png}
 \label{fig:Baseline Nginx interface traffic}
 \end{figure}
+
+\subsubsection{HTTP 200 OK baseline performance measurement}
+
+Optimal number of concurrent connections $ \leftarrow MAX(AVG(r/s)) = 380$
+
+\begin{figure}[H]
+\caption{HTTP 200 OK baseline requests per seconds related to number of concurrent connections}
+\centering
+\includegraphics[scale=0.55] {images/results/baseline_200/output.png}
+\label{fig:Baseline performance measurement}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\caption{HTTP 200 OK baseline CPU usage}
+\includegraphics[scale=0.7]{images/results/baseline_200/cpu.png}
+\label{fig:Baseline Nginx CPU usage}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\caption{HTTP 200 OK baseline memory usage}
+\includegraphics[scale=0.7]{images/results/baseline_200/memory.png}
+\label{fig:Baseline Nginx memory usage}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\caption{HTTP 200 OK baseline disk traffic}
+\includegraphics[scale=0.7]{images/results/baseline_200/disk.png}
+\label{fig:Baseline Nginx disk traffic}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\caption{HTTP 200 OK baseline interface traffic}
+\includegraphics[scale=0.7]{images/results/baseline_200/interface.png}
+\label{fig:Baseline Nginx interface traffic}
+\end{figure}
+
+\subsection{Performance measurement with Naxsi}
+Because earlier tests did not give conclusive results, the next step is to take the back-end application server out of the equation and focus completely on the Nginx and Naxsi server. Because the load on the Nginx server is still very low when the back-end server reaches its maximum performance, it is hard to measure the overhead Naxsi has on the server.
+
+To test the performance of Naxsi, it is important to have a new baseline measurement. This time the client's request is not forwarded to the back-end server, but instead, Nginx returns a \verb+HTTP 200 OK+ response to the client. First, the Nginx server is testen without Naxsi enabled. Second, Naxsi is enabled the performance is measured again. Because a simple HTTP return code produces very little overhead for the server and the bandwith, it is not the response time that is compared, but the number of requests per second that the server is able to handle.
+
+\subsubsection{Without URL paramaters}
+\subsubsection{With URL parameters}
 
 \subsubsection{Naxsi performance measurement}
 
 After enabling Naxsi in \verb+/etc/nginx/nginx.conf+ and after reloading Nginx, it is possible to do the performance measurement of Nginx combined with Naxsi. Details about how to enable Naxsi can be found in appendix \ref{sec:server01_configuration}. All Naxsi performance measurements include the Naxsi core rules. Because Naxsi uses a white listing mechanism, the performance test of Naxsi is measured by incrementing the number of rules on the site level configuration. Each request should be passed through the white list and based on the final score, Naxsi either allows or denies the request. The denied request, in this setup, simply returns an \verb+HTTP 403+ error code. Both \verb+/var/log/nginx/access.log+ and \verb+/var/log/nginx/error.log+ can be monitored to see what Naxsi does with the request.
 
 As explained in section \ref{sec:naxsi_whitelist}, Naxsi efficiently processes the white list rules with use of hash buckets. Therefore, the performance has no measurable difference compared to the measurement that is done without Naxsi being enabled. The number of request per second stay the same, because the back-end server is still the bottle-neck. The CPU, memory, network and interface usage are equal to that of the previous measurement.
-
-\subsection{Performance measurement without back-end}
-Because earlier tests did not give conclusive results, the next step is to take the back-end application server out of the equation and focus completely on the Nginx and Naxsi server. Because the load on the Nginx server is still very low when the back-end server reaches its maximum performance, it is hard to measure the overhead Naxsi has on the server.
-
-To test the performance of Naxsi, it is important to have a new baseline measurement. This time the client's request is not forwarded to the back-end server, but instead, Nginx returns a \verb+HTTP 200 OK+ response to the client. First, the Nginx server is testen without Naxsi enabled. Second, Naxsi is enabled the performance is measured again. Because a simple HTTP return code produces very little overhead for the server and the bandwith, it is not the response time that is compared, but the number of requests per second that the server is able to handle.
-
-\subsubsection{Nginx baseline perfomance measurement}
-
-\begin{figure}[H]
-\caption{Apache benchmark baseline performance measurement}
-\centering
-\includegraphics[scale=0.55] {images/results/200_without_naxsi/output.png}
-\label{fig:Baseline performance measurement}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\caption{Baseline Nginx CPU usage}
-\includegraphics[scale=0.7]{images/results/200_without_naxsi/cpu.png}
-\label{fig:Baseline Nginx CPU usage}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\caption{Baseline Nginx memory usage}
-\includegraphics[scale=0.7]{images/results/200_without_naxsi/memory.png}
-\label{fig:Baseline Nginx memory usage}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\caption{Baseline Nginx disk traffic}
-\includegraphics[scale=0.7]{images/results/200_without_naxsi/disk.png}
-\label{fig:Baseline Nginx disk traffic}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\caption{Baseline Nginx interface traffic}
-\includegraphics[scale=0.7]{images/results/200_without_naxsi/interface.png}
-\label{fig:Baseline Nginx interface traffic}
-\end{figure}
-
-\subsubsection{HTTP 200 with Naxsi compiled}
-
-\begin{figure}[H]
-\caption{Apache benchmark baseline performance measurement}
-\centering
-\includegraphics[scale=0.55] {images/results/200_with_naxsi_compiled/output.png}
-\label{fig:Baseline performance measurement}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\caption{Baseline Nginx CPU usage}
-\includegraphics[scale=0.7]{images/results/200_with_naxsi_compiled/cpu.png}
-\label{fig:Baseline Nginx CPU usage}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\caption{Baseline Nginx memory usage}
-\includegraphics[scale=0.7]{images/results/200_with_naxsi_compiled/memory.png}
-\label{fig:Baseline Nginx memory usage}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\caption{Baseline Nginx disk traffic}
-\includegraphics[scale=0.7]{images/results/200_with_naxsi_compiled/disk.png}
-\label{fig:Baseline Nginx disk traffic}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\caption{Baseline Nginx interface traffic}
-\includegraphics[scale=0.7]{images/results/200_with_naxsi_compiled/interface.png}
-\label{fig:Baseline Nginx interface traffic}
-\end{figure}
-
-\subsubsection{HTTP 200 with Naxsi core rules configured}
-
-\begin{figure}[H]
-\caption{Apache benchmark baseline performance measurement}
-\centering
-\includegraphics[scale=0.55] {images/results/200_with_naxsi_core_rules_configured/output.png}
-\label{fig:Baseline performance measurement}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\caption{Baseline Nginx CPU usage}
-\includegraphics[scale=0.7]{images/results/200_with_naxsi_core_rules_configured/cpu.png}
-\label{fig:Baseline Nginx CPU usage}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\caption{Baseline Nginx memory usage}
-\includegraphics[scale=0.7]{images/results/200_with_naxsi_core_rules_configured/memory.png}
-\label{fig:Baseline Nginx memory usage}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\caption{Baseline Nginx disk traffic}
-\includegraphics[scale=0.7]{images/results/200_with_naxsi_core_rules_configured/disk.png}
-\label{fig:Baseline Nginx disk traffic}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\caption{Baseline Nginx interface traffic}
-\includegraphics[scale=0.7]{images/results/200_with_naxsi_core_rules_configured/interface.png}
-\label{fig:Baseline Nginx interface traffic}
-\end{figure}
 \end{document}
 
