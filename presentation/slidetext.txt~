@@ -1,0 +1,64 @@
+title slide
+
+table of contents
+ * introduction
+
+Green IT
+ * graph CO2
+ * impact IT on environment
+
+What is Green IT?
+Implementing virtualization.
+Equipment consolidation.
+Upgrading to newer, more energy-aware equipment
+Employing management systems to increase efficiency and availability. 
+
+How can we extend GreenIT?
+ * In short: Making network-nodes energy aware
+ * In long:
+   * way of monitoring equipment => energy profiling
+   * availabiliy of monitoring data => distribution
+   * using data for e.g. path decisioning 
+
+Which of those is in place?
+ * Monitoring = NMSOA
+ * data = PDU/SNMP/Sensor (no standard!)
+ * path = experimental setups in NRENS
+
+What is this project about then?
+ * determining capabilities and architectures of NMSOAs
+ * extending a NMSOA to include energy data
+ * by this make data available for e.g. path decisioning
+  => Research question(s)
+
+overview of past slides
+ * past slides
+
+What exactly is perfSONAR? 1/3
+ * created in the JRA2 GEANT2
+ * mainly used by NRENs and educational entities
+ * implements the NMSOA-architecture
+ * decentralized system that spans across multiple domains
+ 
+What exactly is perfSONAR? 2/3
+ * encapsulate basic functionalities within entities called services
+ * unified protocol which assumes various roles by using OGF and NMWG
+ * currently network performance only
+ * doesn't handle energy-profiling atm
+
+What exactly is perfSONAR? 3/3
+ * describe why it's not possible to use perfSONAR
+
+How to make GreenSONAR then?
+ * define standard for energy profiling
+ * implement in perfSONAR
+
+Results
+ * 
+ * traffic flow model
+ * metric
+
+conclusion
+ * It is not possible to extend perfSONAR within 4 weeks
+
+questions

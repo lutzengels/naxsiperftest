@@ -1,0 +1,34 @@
+% This file is modified by Frans Oliehoek <faolieho@science.uva.nl>
+% on 2005/12/18. (original file name: beamerthemedefault.sty)
+%
+%  This theme will generate overfull hbox errors, but these can be ignored.
+
+% Copyright 2003 by Till Tantau <tantau@users.sourceforge.net>
+%
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 2.
+
+\mode<presentation>
+
+
+\usecolortheme{IAS2}
+\useinnertheme[shadow=true]{rounded}
+\useoutertheme{IAS_split_topNav}
+\useoutertheme{IAS_sidebar2_10pt}
+\usefonttheme{default}
+
+
+% change this to adapt the size of the sidebar
+\setbeamersize{sidebar width left=0.5cm,sidebar width right=0cm}{\usebeamercolor{sidebar}}
+
+% you might additionally want to change the margins
+\setbeamersize{text margin left=0.5cm,text margin right=0.5cm}
+
+% comment this to disable the gradient shading
+\setbeamertemplate{sidebar canvas left}[horizontal shading][left=ias_bluelight,right=ias_bluemid]
+
+
+%\setbeamerfont{block title}{size={}}
+
+\mode
+<all>
