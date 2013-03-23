@@ -5,7 +5,7 @@
 \label{sec:Measurements}
 Basically, there are two main different scenarios for measuring the performance. The first one is by measuring the performance of Nginx when Naxsi is disabled. The second one is by measure the performance when Naxsi is enabled.  In the first measurement scenario, the performance is measured as baseline. First a baseline measurement is performed with a Wordpress website on a back-end server. Second, the performance a baseline is measured where Nginx only returns a \verb+HTTP 200 OK+ response. This latter baseline measurement gives the lowest overhead and maximum performance of the Nginx webserver.
 
-\subsection{Baseline performance measurement without Naxsi}
+\subsection{Baseline performance measurement}
 The baseline performance measurements are used as a reference for comparing later measurement results when Naxsi is enabled.
 
 \subsubsection{Wordpress}
@@ -118,7 +118,18 @@ Because earlier tests did not give conclusive results, the next step is to take 
 
 To test the performance of Naxsi, it is important to have a new baseline measurement. This time the client's request is not forwarded to the back-end server, but instead, Nginx returns a \verb+HTTP 200 OK+ response to the client. First, the Nginx server is testen without Naxsi enabled. Second, Naxsi is enabled the performance is measured again. Because a simple HTTP return code produces very little overhead for the server and the bandwith, it is not the response time that is compared, but the number of requests per second that the server is able to handle.
 
-\subsubsection{Allowed parameters}
+\subsubsection{Wordpress}
+% autobench --single_host --host1 wp_with_naxsi.test.nl --uri1 / --low_rate 1 --high_rate 230 --rate_step 1 --num_call 1 --const_test_time 60  --file results.csv
+\begin{figure}[H]
+\caption{wp with naxsi 1 to 230 connections}
+\centering
+\includegraphics[scale=0.55] {images/results/wp_with_naxsi_1_to_230_concurrent_connections/output.png}
+\label{fig:Baseline performance measurement}
+\end{figure}
+
+\subsubsection{HTTP 200 OK}
+
+\paragraph{Allowed parameters}
 
 \begin{figure}[H]
 \caption{HTTP 200 OK baseline requests per seconds related to number of URL parameters}
@@ -155,7 +166,7 @@ To test the performance of Naxsi, it is important to have a new baseline measure
 \label{fig:Baseline Nginx interface traffic}
 \end{figure}
 
-\subsubsection{Disallowed parameters}
+\paragraph{Disallowed parameters}
 
 \begin{figure}[H]
 \caption{HTTP 200 OK baseline requests per seconds related to number of URL parameters}
