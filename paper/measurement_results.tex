@@ -4,7 +4,8 @@
 \section{Measurement results}
 \label{sec:Measurement results}
 
-\subsection{Baseline measurement 1}
+\subsection{Wordpress baseline performance measurement }
+\subsubsection{Baseline measurement 1}
 \label{sec:baseline_measurement_1}
 \begin{verbatim}
 ~# httperf --server wp_without_naxsi.test.nl --uri /index.php \
@@ -36,7 +37,7 @@ Errors: total 0 client-timo 0 socket-timo 0 connrefused 0 connreset 0
 Errors: fd-unavail 0 addrunavail 0 ftab-full 0 other 0
 \end{verbatim}
 
-\subsection{Baseline measurement 2}
+\subsubsection{Baseline measurement 2}
 \label{sec:baseline_measurement_2}
 \begin{verbatim}
 # httperf --server wp_without_naxsi.test.nl --uri /index.php --num-call 1 \
@@ -82,5 +83,126 @@ CheckRule "$EVADE >= 4" BLOCK;
 CheckRule "$XSS >= 8" BLOCK;
 \end{lstlisting}
 
+\subsubsection{Resource usage}
+\begin{figure}[H]
+\centering
+\caption{Wordpress baseline CPU usage}
+\includegraphics[scale=0.7]{images/results/baseline_wp/cpu.png}
+\label{fig:Baseline Nginx CPU usage}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\caption{Wordpress baseline memory usage}
+\includegraphics[scale=0.7]{images/results/baseline_wp/memory.png}
+\label{fig:Baseline Nginx memory usage}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\caption{Wordpress baseline disk traffic}
+\includegraphics[scale=0.7]{images/results/baseline_wp/disk.png}
+\label{fig:Baseline Nginx disk traffic}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\caption{Wordpress baseline interface traffic}
+\includegraphics[scale=0.7]{images/results/baseline_wp/interface.png}
+\label{fig:Baseline Nginx interface traffic}
+\end{figure}
+
+\subsection{HTTP 200 OK baseline performance measurement}
+
+\subsubsection{Resource usage}
+\begin{figure}[H]
+\centering
+\caption{HTTP 200 OK baseline CPU usage}
+\includegraphics[scale=0.7]{images/results/baseline_200/cpu.png}
+\label{fig:Baseline Nginx CPU usage}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\caption{HTTP 200 OK baseline memory usage}
+\includegraphics[scale=0.7]{images/results/baseline_200/memory.png}
+\label{fig:Baseline Nginx memory usage}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\caption{HTTP 200 OK baseline disk traffic}
+\includegraphics[scale=0.7]{images/results/baseline_200/disk.png}
+\label{fig:Baseline Nginx disk traffic}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\caption{HTTP 200 OK baseline interface traffic}
+\includegraphics[scale=0.7]{images/results/baseline_200/interface.png}
+\label{fig:Baseline Nginx interface traffic}
+\end{figure}
+
+\subsection{Wordpress performance measurement with Naxsi}
+
+\subsection{HTTP 200 OK performance measurement with Naxsi}
+
+\subsubsection{Resource usage with allowed parameters}
+\begin{figure}[H]
+\centering
+\caption{HTTP 200 OK baseline CPU usage}
+\includegraphics[scale=0.7]{images/results/200_with_naxsi_incremented_allowed_parameters/cpu.png}
+\label{fig:Baseline Nginx CPU usage}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\caption{HTTP 200 OK baseline memory usage}
+\includegraphics[scale=0.7]{images/results/200_with_naxsi_incremented_allowed_parameters/memory.png}
+\label{fig:Baseline Nginx memory usage}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\caption{HTTP 200 OK baseline disk traffic}
+\includegraphics[scale=0.7]{images/results/200_with_naxsi_incremented_allowed_parameters/disk.png}
+\label{fig:Baseline Nginx disk traffic}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\caption{HTTP 200 OK baseline interface traffic}
+\includegraphics[scale=0.7]{images/results/200_with_naxsi_incremented_allowed_parameters/interface.png}
+\label{fig:Baseline Nginx interface traffic}
+\end{figure}
+
+\subsubsection{Resource usage with disallowed parameters}
+\begin{figure}[H]
+\centering
+\caption{HTTP 200 OK baseline CPU usage}
+\includegraphics[scale=0.7]{images/results/200_with_naxsi_incremented_disallowed_parameters/cpu.png}
+\label{fig:Baseline Nginx CPU usage}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\caption{HTTP 200 OK baseline memory usage}
+\includegraphics[scale=0.7]{images/results/200_with_naxsi_incremented_disallowed_parameters/memory.png}
+\label{fig:Baseline Nginx memory usage}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\caption{HTTP 200 OK baseline disk traffic}
+\includegraphics[scale=0.7]{images/results/200_with_naxsi_incremented_disallowed_parameters/disk.png}
+\label{fig:Baseline Nginx disk traffic}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\caption{HTTP 200 OK baseline interface traffic}
+\includegraphics[scale=0.7]{images/results/200_with_naxsi_incremented_disallowed_parameters/interface.png}
+\label{fig:Baseline Nginx interface traffic}
+\end{figure}
 \end{document}
 

@@ -44,37 +44,9 @@ Based on the values derived from the measurement above, the performance is measu
 \label{fig:Baseline performance measurement}
 \end{figure}
 
-When staying under 190 concurrent connections, the response time is \mbox{$\approx 30 ms$}. Figure \ref{fig:Baseline Nginx CPU usage} shows a steady increase of the number of jiffies when the numbers of concurrent connections increase. The number of jiffies only increase when the number of concurrent connections is still below 190. As soon as the concurrency raises above 190, the Nginx server starts returning \verb+HTTP 5xx+ error codes, because the back-end is not able to handle all requests. The memory foot print of Nginx is little, as can be seen in figure \ref{fig:Baseline Nginx memory usage}. The number of request have only a minimal impact on the memory usage. The number Bytes written on disk is also very minimal, as can be seen in figure \ref{fig:Baseline Nginx disk traffic}. Around 21.30 hours the disk IO drops slighty, which is the time the measurement ended. Figure \ref{fig:Baseline Nginx interface traffic} also shows that there is little network traffic. The number of received bits increments linearly as expected, because of incremental number of request received from server04.   
+When staying under $\approx 190$ concurrent connections, the response time is \mbox{$\approx 30 ms$}. Figure \ref{fig:Baseline Nginx CPU usage} shows a steady increase of the number of jiffies when the numbers of concurrent connections increase. The number of jiffies only increase when the number of concurrent connections is still below 190. As soon as the concurrency raises above 190, the Nginx server starts returning \verb+HTTP 5xx+ error codes, because the back-end is not able to handle all requests. The memory foot print of Nginx is little, as can be seen in figure \ref{fig:Baseline Nginx memory usage}. The number of request have only a minimal impact on the memory usage. The number Bytes written on disk is also very minimal, as can be seen in figure \ref{fig:Baseline Nginx disk traffic}. Around 21.30 hours the disk IO drops slighty, which is the time the measurement ended. Figure \ref{fig:Baseline Nginx interface traffic} also shows that there is little network traffic. The number of received bits increments linearly as expected, because of incremental number of request received from server04.
 
-\begin{figure}[H]
-\centering
-\caption{Wordpress baseline CPU usage}
-\includegraphics[scale=0.7]{images/results/baseline_wp/cpu.png}
-\label{fig:Baseline Nginx CPU usage}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\caption{Wordpress baseline memory usage}
-\includegraphics[scale=0.7]{images/results/baseline_wp/memory.png}
-\label{fig:Baseline Nginx memory usage}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\caption{Wordpress baseline disk traffic}
-\includegraphics[scale=0.7]{images/results/baseline_wp/disk.png}
-\label{fig:Baseline Nginx disk traffic}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\caption{Wordpress baseline interface traffic}
-\includegraphics[scale=0.7]{images/results/baseline_wp/interface.png}
-\label{fig:Baseline Nginx interface traffic}
-\end{figure}
-
-\subsubsection{HTTP 200 OK baseline performance measurement}
+\subsubsection{HTTP 200 OK}
 
 Optimal number of concurrent connections $ \leftarrow MAX(AVG(r/s)) = 380$
 
@@ -83,34 +55,6 @@ Optimal number of concurrent connections $ \leftarrow MAX(AVG(r/s)) = 380$
 \centering
 \includegraphics[scale=0.55] {images/results/baseline_200/output.png}
 \label{fig:Baseline performance measurement}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\caption{HTTP 200 OK baseline CPU usage}
-\includegraphics[scale=0.7]{images/results/baseline_200/cpu.png}
-\label{fig:Baseline Nginx CPU usage}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\caption{HTTP 200 OK baseline memory usage}
-\includegraphics[scale=0.7]{images/results/baseline_200/memory.png}
-\label{fig:Baseline Nginx memory usage}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\caption{HTTP 200 OK baseline disk traffic}
-\includegraphics[scale=0.7]{images/results/baseline_200/disk.png}
-\label{fig:Baseline Nginx disk traffic}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\caption{HTTP 200 OK baseline interface traffic}
-\includegraphics[scale=0.7]{images/results/baseline_200/interface.png}
-\label{fig:Baseline Nginx interface traffic}
 \end{figure}
 
 \subsection{Performance measurement with Naxsi}
@@ -138,34 +82,6 @@ To test the performance of Naxsi, it is important to have a new baseline measure
 \label{fig:Baseline performance measurement}
 \end{figure}
 
-\begin{figure}[H]
-\centering
-\caption{HTTP 200 OK baseline CPU usage}
-\includegraphics[scale=0.7]{images/results/200_with_naxsi_incremented_allowed_parameters/cpu.png}
-\label{fig:Baseline Nginx CPU usage}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\caption{HTTP 200 OK baseline memory usage}
-\includegraphics[scale=0.7]{images/results/200_with_naxsi_incremented_allowed_parameters/memory.png}
-\label{fig:Baseline Nginx memory usage}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\caption{HTTP 200 OK baseline disk traffic}
-\includegraphics[scale=0.7]{images/results/200_with_naxsi_incremented_allowed_parameters/disk.png}
-\label{fig:Baseline Nginx disk traffic}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\caption{HTTP 200 OK baseline interface traffic}
-\includegraphics[scale=0.7]{images/results/200_with_naxsi_incremented_allowed_parameters/interface.png}
-\label{fig:Baseline Nginx interface traffic}
-\end{figure}
-
 \paragraph{Disallowed parameters}
 
 \begin{figure}[H]
@@ -175,40 +91,6 @@ To test the performance of Naxsi, it is important to have a new baseline measure
 \label{fig:Baseline performance measurement}
 \end{figure}
 
-\begin{figure}[H]
-\centering
-\caption{HTTP 200 OK baseline CPU usage}
-\includegraphics[scale=0.7]{images/results/200_with_naxsi_incremented_disallowed_parameters/cpu.png}
-\label{fig:Baseline Nginx CPU usage}
-\end{figure}
 
-\begin{figure}[H]
-\centering
-\caption{HTTP 200 OK baseline memory usage}
-\includegraphics[scale=0.7]{images/results/200_with_naxsi_incremented_disallowed_parameters/memory.png}
-\label{fig:Baseline Nginx memory usage}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\caption{HTTP 200 OK baseline disk traffic}
-\includegraphics[scale=0.7]{images/results/200_with_naxsi_incremented_disallowed_parameters/disk.png}
-\label{fig:Baseline Nginx disk traffic}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\caption{HTTP 200 OK baseline interface traffic}
-\includegraphics[scale=0.7]{images/results/200_with_naxsi_incremented_disallowed_parameters/interface.png}
-\label{fig:Baseline Nginx interface traffic}
-\end{figure}
-
-\subsubsection{Naxsi performance measurement}
-
-
-% REWRITE
-After enabling Naxsi in \verb+/etc/nginx/nginx.conf+ and after reloading Nginx, it is possible to do the performance measurement of Nginx combined with Naxsi. Details about how to enable Naxsi can be found in appendix \ref{sec:server01_configuration}. All Naxsi performance measurements include the Naxsi core rules. Because Naxsi uses a white listing mechanism, the performance test of Naxsi is measured by incrementing the number of rules on the site level configuration. Each request should be passed through the white list and based on the final score, Naxsi either allows or denies the request. The denied request, in this setup, simply returns an \verb+HTTP 403+ error code. Both \verb+/var/log/nginx/access.log+ and \verb+/var/log/nginx/error.log+ can be monitored to see what Naxsi does with the request.
-
-As explained in section \ref{sec:naxsi_whitelist}, Naxsi efficiently processes the white list rules with use of hash buckets. Therefore, the performance has no measurable difference compared to the measurement that is done without Naxsi being enabled. The number of request per second stay the same, because the back-end server is still the bottle-neck. The CPU, memory, network and interface usage are equal to that of the previous measurement.
 \end{document}
 
