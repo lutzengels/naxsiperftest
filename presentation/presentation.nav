@@ -3,18 +3,16 @@
 \headcommand {\beamer@framepages {1}{1}}
 \headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
 \headcommand {\beamer@framepages {2}{2}}
-\headcommand {\sectionentry {1}{GreenIT}{3}{GreenIT}{0}}
+\headcommand {\sectionentry {1}{Naxsi}{3}{Naxsi}{0}}
 \headcommand {\beamer@sectionpages {1}{2}}
 \headcommand {\beamer@subsectionpages {1}{2}}
 \headcommand {\slideentry {1}{0}{3}{3/3}{}{0}}
 \headcommand {\beamer@framepages {3}{3}}
 \headcommand {\slideentry {1}{0}{4}{4/4}{}{0}}
 \headcommand {\beamer@framepages {4}{4}}
-\headcommand {\sectionentry {2}{Research questions}{5}{Research questions}{0}}
-\headcommand {\beamer@sectionpages {3}{4}}
-\headcommand {\beamer@subsectionpages {3}{4}}
-\headcommand {\slideentry {2}{0}{5}{5/5}{}{0}}
+\headcommand {\slideentry {1}{0}{5}{5/5}{}{0}}
 \headcommand {\beamer@framepages {5}{5}}
+<<<<<<< HEAD
 \headcommand {\slideentry {2}{0}{6}{6/6}{}{0}}
 \headcommand {\beamer@framepages {6}{6}}
 \headcommand {\slideentry {2}{0}{7}{7/7}{}{0}}
@@ -32,3 +30,19 @@
 \headcommand {\beamer@sectionpages {5}{11}}
 \headcommand {\beamer@documentpages {11}}
 \headcommand {\def \inserttotalframenumber {4}}
+=======
+\headcommand {\slideentry {1}{0}{6}{6/6}{}{0}}
+\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\slideentry {1}{0}{7}{7/7}{}{0}}
+\headcommand {\beamer@framepages {7}{7}}
+\headcommand {\sectionentry {2}{Research questions}{8}{Research questions}{0}}
+\headcommand {\beamer@sectionpages {3}{7}}
+\headcommand {\beamer@subsectionpages {3}{7}}
+\headcommand {\slideentry {2}{0}{8}{8/8}{}{0}}
+\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\beamer@partpages {1}{8}}
+\headcommand {\beamer@subsectionpages {8}{8}}
+\headcommand {\beamer@sectionpages {8}{8}}
+\headcommand {\beamer@documentpages {8}}
+\headcommand {\def \inserttotalframenumber {7}}
+>>>>>>> 0e9125cda4a183075b129f2c344ec75e5399d2a7
