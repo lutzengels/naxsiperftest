@@ -30,7 +30,11 @@
 
 %%%%%%% HTTP 200 OK: URL allowed paramter increments
 \begin{frame}[noframenumbering]
-  \frametitle{HTTP 200 OK: URL allowed parameter increments}
+  \frametitle{HTTP 200 OK: Incrementing allowed URL parameters}
+
+  \mbox{http://examle.com/?foo1=bar1}\\
+  \mbox{http://examle.com/?foo1=bar1\&foo2=bar2}
+
   \begin{figure}[H]
   \centering
   \includegraphics[scale=0.5] {../paper/images/results/200_with_naxsi_incremented_allowed_parameters/output.png}
@@ -39,7 +43,10 @@
 
 %%%%%%% HTTP 200 OK: URL disallowed paramter increments
 \begin{frame}[noframenumbering]
-  \frametitle{HTTP 200 OK: URL disallowed parameter increments}
+  \mbox{http://examle.com/?../}\\
+  \mbox{http://examle.com/?foo1=bar1\&../}
+
+  \frametitle{HTTP 200 OK: Incremting disallowed URL paramters}
   \begin{figure}[H]
   \centering
   \includegraphics[scale=0.5] {../paper/images/results/200_with_naxsi_incremented_disallowed_parameters/output.png}
