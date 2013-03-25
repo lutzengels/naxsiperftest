@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.3)  25 MAR 2013 12:19
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.3)  25 MAR 2013 12:39
 entering extended mode
  %&-line parsing enabled.
 **presentation.tex
@@ -929,17 +929,30 @@ Overfull \hbox (14.68391pt too wide) has occurred while \output is active
 
 [7
 
- <../paper/images/infrastructure.png (PNG copy)>]) (./dennis.tex
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 12.
+ <../paper/images/infrastructure.png (PNG copy)>]
+Overfull \hbox (14.68391pt too wide) has occurred while \output is active
+ [][][][]  
+ []
 
-(/usr/share/texmf-texlive/tex/latex/psnfss/t1pcr.fd
+[8
+
+]
+Overfull \hbox (14.68391pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[9
+
+]) (./dennis.tex
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 12.
+ (/usr/share/texmf-texlive/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 Overfull \hbox (14.68391pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[8
+[10
 
 ])
 \tf@nav=\write6
@@ -953,19 +966,19 @@ Overfull \hbox (14.68391pt too wide) has occurred while \output is active
 
  (./presentation.aux) ) 
 Here is how much of TeX's memory you used:
- 15304 strings out of 495061
- 283043 string characters out of 1182621
+ 15314 strings out of 495061
+ 283133 string characters out of 1182621
  347363 words of memory out of 3000000
- 18029 multiletter control sequences out of 15000+50000
- 31570 words of font info for 50 fonts, out of 3000000 for 9000
+ 18034 multiletter control sequences out of 15000+50000
+ 34460 words of font info for 52 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  49i,19n,60p,401b,656s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</
 usr/share/texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-te
 xlive/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on presentation.pdf (8 pages, 90759 bytes).
+Output written on presentation.pdf (10 pages, 95472 bytes).
 PDF statistics:
- 122 PDF objects out of 1000 (max. 8388607)
- 19 named destinations out of 1000 (max. 500000)
+ 138 PDF objects out of 1000 (max. 8388607)
+ 23 named destinations out of 1000 (max. 500000)
  94 words of extra memory for PDF output out of 10000 (max. 10000000)
 
