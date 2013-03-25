@@ -1,0 +1,50 @@
+\contentsline {section}{\numberline {1}Introduction}{4}
+\contentsline {subsection}{\numberline {1.1}Research question}{4}
+\contentsline {subsubsection}{\numberline {1.1.1}Sub questions}{4}
+\contentsline {section}{\numberline {2}Naxsi}{4}
+\contentsline {subsection}{\numberline {2.1}Request flow}{5}
+\contentsline {subsection}{\numberline {2.2}Whitelist processing}{5}
+\contentsline {section}{\numberline {3}Methods}{5}
+\contentsline {subsection}{\numberline {3.1}Experimental setup}{6}
+\contentsline {subsection}{\numberline {3.2}Performance measurement tools}{6}
+\contentsline {subsubsection}{\numberline {3.2.1}Apache Benchmark}{7}
+\contentsline {subsubsection}{\numberline {3.2.2}Httperf}{7}
+\contentsline {subsubsection}{\numberline {3.2.3}Autobench}{7}
+\contentsline {subsubsection}{\numberline {3.2.4}Collectd}{7}
+\contentsline {subsection}{\numberline {3.3}Performance measurements}{8}
+\contentsline {subsubsection}{\numberline {3.3.1}Wordpress}{8}
+\contentsline {subsubsection}{\numberline {3.3.2}HTTP 200 OK}{8}
+\contentsline {section}{\numberline {4}Measurements}{9}
+\contentsline {subsection}{\numberline {4.1}Baseline performance measurement}{9}
+\contentsline {subsubsection}{\numberline {4.1.1}Wordpress}{9}
+\contentsline {subsubsection}{\numberline {4.1.2}HTTP 200 OK}{10}
+\contentsline {subsection}{\numberline {4.2}Performance measurement with Naxsi}{11}
+\contentsline {subsubsection}{\numberline {4.2.1}Wordpress}{12}
+\contentsline {paragraph}{Allowed parameters}{12}
+\contentsline {paragraph}{Disallowed parameters}{13}
+\contentsline {subsubsection}{\numberline {4.2.2}HTTP 200 OK}{14}
+\contentsline {paragraph}{Allowed parameters}{14}
+\contentsline {section}{\numberline {5}Results}{15}
+\contentsline {section}{\numberline {6}Conclusion}{15}
+\contentsline {section}{\numberline {A}Acronyms and abbreviations}{16}
+\contentsline {section}{\numberline {B}Experimental setup}{17}
+\contentsline {subsection}{\numberline {B.1}Hardware}{17}
+\contentsline {subsection}{\numberline {B.2}Configuration}{18}
+\contentsline {subsubsection}{\numberline {B.2.1}server01, server02, server03 and server04}{18}
+\contentsline {subsubsection}{\numberline {B.2.2}server01}{20}
+\contentsline {subsubsection}{\numberline {B.2.3}server02}{24}
+\contentsline {subsubsection}{\numberline {B.2.4}server03}{29}
+\contentsline {subsubsection}{\numberline {B.2.5}server04}{30}
+\contentsline {subsubsection}{\numberline {B.2.6}server05}{31}
+\contentsline {section}{\numberline {C}Measurement results}{34}
+\contentsline {subsection}{\numberline {C.1}Wordpress baseline performance measurement }{34}
+\contentsline {subsubsection}{\numberline {C.1.1}Baseline measurement 1}{34}
+\contentsline {subsubsection}{\numberline {C.1.2}Baseline measurement 2}{34}
+\contentsline {subsection}{\numberline {C.2}Naxsi measurement 1}{35}
+\contentsline {subsubsection}{\numberline {C.2.1}Resource usage}{36}
+\contentsline {subsection}{\numberline {C.3}HTTP 200 OK baseline performance measurement}{38}
+\contentsline {subsubsection}{\numberline {C.3.1}Resource usage}{38}
+\contentsline {subsection}{\numberline {C.4}Wordpress performance measurement with Naxsi}{39}
+\contentsline {subsection}{\numberline {C.5}HTTP 200 OK performance measurement with Naxsi}{44}
+\contentsline {subsubsection}{\numberline {C.5.1}Resource usage with allowed parameters}{44}
+\contentsline {subsubsection}{\numberline {C.5.2}Resource usage with disallowed parameters}{46}

@@ -6,15 +6,15 @@
 \begin{frame}[noframenumbering]
   \frametitle{Approach}
   \begin{itemize}
-   \item Naxsi isolation
-     \begin{itemize}
-       \item Baseline performance measurement (HTTP 200 OK)
-       \item URL parameter increments
-     \end{itemize}
-   \item Real-life scenario
+   \item Naxsi isolation (HTTP 200 OK)
      \begin{itemize}
        \item Baseline performance measurement
-       \item Normal usage case
+       \item Incrementing URL parameters
+     \end{itemize}
+   \item Real-life scenario (Wordpress)
+     \begin{itemize}
+       \item Baseline performance measurement
+       \item Incrementing URL parameters
      \end{itemize}
   \end{itemize}
 \end{frame}
@@ -30,10 +30,10 @@
 
 %%%%%%% HTTP 200 OK: URL allowed paramter increments
 \begin{frame}[noframenumbering]
-  \frametitle{HTTP 200 OK: Incrementing allowed URL parameters}
+  \frametitle{HTTP 200 OK: incrementing allowed URL parameters}
 
-  \mbox{http://examle.com/?foo1=bar1}\\
-  \mbox{http://examle.com/?foo1=bar1\&foo2=bar2}
+  \mbox{http://example.com/?foo1=bar1}\\
+  \mbox{http://example.com/?foo1=bar1\&foo2=bar2}
 
   \begin{figure}[H]
   \centering
@@ -43,10 +43,10 @@
 
 %%%%%%% HTTP 200 OK: URL disallowed paramter increments
 \begin{frame}[noframenumbering]
-  \mbox{http://examle.com/?../}\\
-  \mbox{http://examle.com/?foo1=bar1\&../}
+  \mbox{http://example.com/?../}\\
+  \mbox{http://example.com/?foo1=bar1\&../}
 
-  \frametitle{HTTP 200 OK: Incremting disallowed URL paramters}
+  \frametitle{HTTP 200 OK: incremting disallowed URL paramters}
   \begin{figure}[H]
   \centering
   \includegraphics[scale=0.5] {../paper/images/results/200_with_naxsi_incremented_disallowed_parameters/output.png}
@@ -55,7 +55,7 @@
 
 %%%%%%% Wordpress baseline
 \begin{frame}[noframenumbering]
-  \frametitle{Wordpress baseline performance measurement}
+  \frametitle{Wordpress: baseline performance measurement}
   \begin{figure}[H]
   \centering
   \includegraphics[scale=0.5] {../paper/images/results/baseline_wp/output.png}
@@ -64,17 +64,42 @@
 
 %%%%%%% Wordpress with Naxsi
 \begin{frame}[noframenumbering]
-  \frametitle{Wordpress with Naxsi}
+  \mbox{http://example.com/?foo1=bar1}\\
+  \mbox{http://example.com/?foo1=bar1\&foo2=bar2}
+
+  \frametitle{Wordpress: incrementing allowed URL parameters}
   \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.5] {../paper/images/results/wp_with_naxsi_1_to_230_concurrent_connections/output.png}
+  \includegraphics[scale=0.5] {../paper/images/results/wp_with_naxsi_incremented_allowed_parameters/output.png}
   \end{figure}
 \end{frame}  
+  
+%%%%%%% Wordpress with Naxsi
+\begin{frame}[noframenumbering]
+  \mbox{http://example.com/?../}\\
+  \mbox{http://example.com/?foo1=bar1\&../}
+  
+  \frametitle{Wordpress: incrementing disallowed URL parameters}
+  \begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5] {../paper/images/results/wp_with_naxsi_incremented_disallowed_parameters/output.png}
+  \end{figure}
+\end{frame}   
   
 %%%%%%% Conclusion
 \begin{frame}[noframenumbering]
   \frametitle{Conclusion}
   \begin{itemize}
-    \item Naxsi has a low overhead
+    \item Naxsi has a low overhead on system resources
+    \item The value of Naxsi depends on the application that needs to be protected
+    \item Naxsi is flexible and allows for different applications to be protected with a different rule set
   \end{itemize}
+\end{frame}
+
+%%%%%%% Conclusion
+\begin{frame}[noframenumbering]
+  \frametitle{Questions}
+  \begin{center}
+  Questions?
+  \end{center}
 \end{frame}
