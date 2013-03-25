@@ -19,7 +19,9 @@
 \contentsline {subsubsection}{\numberline {4.1.1}Wordpress}{9}
 \contentsline {subsubsection}{\numberline {4.1.2}HTTP 200 OK}{10}
 \contentsline {subsection}{\numberline {4.2}Performance measurement with Naxsi}{11}
-\contentsline {subsubsection}{\numberline {4.2.1}Wordpress}{12}
+\contentsline {subsubsection}{\numberline {4.2.1}Wordpress}{11}
+\contentsline {paragraph}{Allowed parameters}{11}
+\contentsline {paragraph}{Disallowed parameters}{12}
 \contentsline {subsubsection}{\numberline {4.2.2}HTTP 200 OK}{13}
 \contentsline {paragraph}{Allowed parameters}{13}
 \contentsline {section}{\numberline {5}Results}{14}
@@ -42,7 +44,7 @@
 \contentsline {subsubsection}{\numberline {C.2.1}Resource usage}{35}
 \contentsline {subsection}{\numberline {C.3}HTTP 200 OK baseline performance measurement}{37}
 \contentsline {subsubsection}{\numberline {C.3.1}Resource usage}{37}
-\contentsline {subsection}{\numberline {C.4}Wordpress performance measurement with Naxsi}{39}
-\contentsline {subsection}{\numberline {C.5}HTTP 200 OK performance measurement with Naxsi}{41}
-\contentsline {subsubsection}{\numberline {C.5.1}Resource usage with allowed parameters}{41}
-\contentsline {subsubsection}{\numberline {C.5.2}Resource usage with disallowed parameters}{43}
+\contentsline {subsection}{\numberline {C.4}Wordpress performance measurement with Naxsi}{38}
+\contentsline {subsection}{\numberline {C.5}HTTP 200 OK performance measurement with Naxsi}{39}
+\contentsline {subsubsection}{\numberline {C.5.1}Resource usage with allowed parameters}{39}
+\contentsline {subsubsection}{\numberline {C.5.2}Resource usage with disallowed parameters}{41}

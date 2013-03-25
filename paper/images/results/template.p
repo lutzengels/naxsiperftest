@@ -11,12 +11,11 @@ set size 1,0.7
 set grid y
  
 # x-axis label
-set xlabel "concurrent requests"
+set xlabel "parameters"
  
 # y-axis label
 set ylabel "response time (ms)"
  
-# set style line 1 lt 1 linecolor rgb "#0000ff"
-# set style line 2 lt 1 linecolor rgb "#000000"
+set style line 1 lt 1 linecolor rgb "#ff0000"
 
-plot "results.csv" using 8 smooth sbezier with lines title ""
+plot "results.csv" using 1 ls 1 smooth sbezier with lines title ""
