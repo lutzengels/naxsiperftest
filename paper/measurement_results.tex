@@ -143,10 +143,38 @@ CheckRule "$XSS >= 8" BLOCK;
 \label{fig:Baseline Nginx interface traffic}
 \end{figure}
 
+% WORDPRESS with Naxsi
 \subsection{Wordpress performance measurement with Naxsi}
+\begin{figure}[H]
+\centering
+\caption{HTTP 200 OK baseline CPU usage}
+\includegraphics[scale=0.7]{images/results/wp_with_naxsi_1_to_230_concurrent_connections/cpu.png}
+\label{fig:Baseline Nginx CPU usage}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\caption{HTTP 200 OK baseline memory usage}
+\includegraphics[scale=0.7]{images/results/wp_with_naxsi_1_to_230_concurrent_connections/memory.png}
+\label{fig:Baseline Nginx memory usage}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\caption{HTTP 200 OK baseline disk traffic}
+\includegraphics[scale=0.7]{images/results/wp_with_naxsi_1_to_230_concurrent_connections/disk.png}
+\label{fig:Baseline Nginx disk traffic}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\caption{HTTP 200 OK baseline interface traffic}
+\includegraphics[scale=0.7]{images/results/wp_with_naxsi_1_to_230_concurrent_connections/interface.png}
+\label{fig:Baseline Nginx interface traffic}
+\end{figure}
+
 
 \subsection{HTTP 200 OK performance measurement with Naxsi}
-
 \subsubsection{Resource usage with allowed parameters}
 \begin{figure}[H]
 \centering

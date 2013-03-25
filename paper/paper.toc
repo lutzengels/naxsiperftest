@@ -43,6 +43,6 @@
 \contentsline {subsection}{\numberline {C.3}HTTP 200 OK baseline performance measurement}{37}
 \contentsline {subsubsection}{\numberline {C.3.1}Resource usage}{37}
 \contentsline {subsection}{\numberline {C.4}Wordpress performance measurement with Naxsi}{39}
-\contentsline {subsection}{\numberline {C.5}HTTP 200 OK performance measurement with Naxsi}{39}
-\contentsline {subsubsection}{\numberline {C.5.1}Resource usage with allowed parameters}{39}
-\contentsline {subsubsection}{\numberline {C.5.2}Resource usage with disallowed parameters}{41}
+\contentsline {subsection}{\numberline {C.5}HTTP 200 OK performance measurement with Naxsi}{41}
+\contentsline {subsubsection}{\numberline {C.5.1}Resource usage with allowed parameters}{41}
+\contentsline {subsubsection}{\numberline {C.5.2}Resource usage with disallowed parameters}{43}
