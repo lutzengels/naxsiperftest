@@ -65,10 +65,14 @@ To test the performance of Naxsi, it is important to have a new baseline measure
 \subsubsection{Wordpress}
 
 \paragraph{Allowed parameters}
+\begin{figure}[H]
+\caption{Wordpress with Naxsi enabled}
+\centering
+\includegraphics[scale=0.55] {images/results/wp_with_naxsi_incremented_allowed_parameters/output.png}
+\label{fig:Baseline performance measurement}
+\end{figure}
 
 \paragraph{Disallowed parameters}
-
-% autobench --single_host --host1 wp_with_naxsi.test.nl --uri1 / --low_rate 1 --high_rate 230 --rate_step 1 --num_call 1 --const_test_time 60  --file results.csv
 \begin{figure}[H]
 \caption{Wordpress with Naxsi enabled}
 \centering
@@ -95,7 +99,6 @@ To test the performance of Naxsi, it is important to have a new baseline measure
 \includegraphics[scale=0.55] {images/results/200_with_naxsi_incremented_disallowed_parameters/output.png}
 \label{fig:Baseline performance measurement}
 \end{figure}
-
 
 \end{document}
 

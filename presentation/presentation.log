@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.30)  25 MAR 2013 14:32
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.30)  25 MAR 2013 21:04
 entering extended mode
  %&-line parsing enabled.
 **presentation.tex
@@ -897,7 +897,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <8> not available
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <6> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 35.
 
-<../paper/images/naxsi_flow.png, id=71, 421.575pt x 500.87125pt>
+<../paper/images/naxsi_flow.png, id=70, 421.575pt x 500.87125pt>
 File: ../paper/images/naxsi_flow.png Graphic file (type png)
 
 <use ../paper/images/naxsi_flow.png>
@@ -919,7 +919,7 @@ Overfull \hbox (5.3535pt too wide) has occurred while \output is active
 
 [6
 
-] <../paper/images/infrastructure.png, id=88, 777.90625pt x 339.2675pt>
+] <../paper/images/infrastructure.png, id=87, 779.91376pt x 345.29pt>
 File: ../paper/images/infrastructure.png Graphic file (type png)
 
 <use ../paper/images/infrastructure.png>
@@ -977,7 +977,7 @@ Overfull \hbox (5.3535pt too wide) has occurred while \output is active
  <../paper/images/results/200_with_naxsi_incremented_allowed_parameters/output.
 png (PNG copy)>]
 <../paper/images/results/200_with_naxsi_incremented_disallowed_parameters/outpu
-t.png, id=142, 641.39626pt x 333.245pt>
+t.png, id=142, 642.4pt x 332.24126pt>
 File: ../paper/images/results/200_with_naxsi_incremented_disallowed_parameters/
 output.png Graphic file (type png)
 
@@ -1001,26 +1001,48 @@ Overfull \hbox (5.3535pt too wide) has occurred while \output is active
 [14
 
  <../paper/images/results/baseline_wp/output.png (PNG copy)>]
-<../paper/images/results/wp_with_naxsi_1_to_230_concurrent_connections/output.p
-ng, id=162, 641.39626pt x 343.2825pt>
-File: ../paper/images/results/wp_with_naxsi_1_to_230_concurrent_connections/out
-put.png Graphic file (type png)
+<../paper/images/results/wp_with_naxsi_incremented_allowed_parameters/output.pn
+g, id=163, 642.4pt x 335.2525pt>
+File: ../paper/images/results/wp_with_naxsi_incremented_allowed_parameters/outp
+ut.png Graphic file (type png)
 
-<use ../paper/images/results/wp_with_naxsi_1_to_230_concurrent_connections/outp
-ut.png>
+<use ../paper/images/results/wp_with_naxsi_incremented_allowed_parameters/outpu
+t.png>
 Overfull \hbox (5.3535pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [15
 
- <../paper/images/results/wp_with_naxsi_1_to_230_concurrent_connections/output.
-png (PNG copy)>]
+ <../paper/images/results/wp_with_naxsi_incremented_allowed_parameters/output.p
+ng (PNG copy)>]
+<../paper/images/results/wp_with_naxsi_incremented_disallowed_parameters/output
+.png, id=173, 642.4pt x 334.24875pt>
+File: ../paper/images/results/wp_with_naxsi_incremented_disallowed_parameters/o
+utput.png Graphic file (type png)
+
+<use ../paper/images/results/wp_with_naxsi_incremented_disallowed_parameters/ou
+tput.png>
 Overfull \hbox (5.3535pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [16
+
+ <../paper/images/results/wp_with_naxsi_incremented_disallowed_parameters/outpu
+t.png (PNG copy)>]
+Overfull \hbox (5.3535pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[17
+
+]
+Overfull \hbox (5.3535pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[18
 
 ])
 \tf@nav=\write6
@@ -1034,18 +1056,18 @@ Overfull \hbox (5.3535pt too wide) has occurred while \output is active
 
  (./presentation.aux) ) 
 Here is how much of TeX's memory you used:
- 15348 strings out of 495061
- 285323 string characters out of 1182621
+ 15365 strings out of 495061
+ 285843 string characters out of 1182621
  347270 words of memory out of 3000000
- 18055 multiletter control sequences out of 15000+50000
+ 18067 multiletter control sequences out of 15000+50000
  36729 words of font info for 52 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  49i,19n,60p,401b,656s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</
 usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on presentation.pdf (16 pages, 121319 bytes).
+Output written on presentation.pdf (18 pages, 128747 bytes).
 PDF statistics:
- 195 PDF objects out of 1000 (max. 8388607)
- 35 named destinations out of 1000 (max. 500000)
- 125 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 216 PDF objects out of 1000 (max. 8388607)
+ 39 named destinations out of 1000 (max. 500000)
+ 130 words of extra memory for PDF output out of 10000 (max. 10000000)
 
