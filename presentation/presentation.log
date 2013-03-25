@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.3)  25 MAR 2013 11:15
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.3)  25 MAR 2013 12:19
 entering extended mode
  %&-line parsing enabled.
 **presentation.tex
@@ -866,39 +866,42 @@ Overfull \hbox (14.68391pt too wide) has occurred while \output is active
 
 [2
 
-] (./lutz.tex <images/co2temp.jpg, id=52, 578.16pt x 399.4925pt>
-File: images/co2temp.jpg Graphic file (type jpg)
-
-<use images/co2temp.jpg>
-Overfull \vbox (2.45891pt too high) detected at line 9
- []
-
-
+] (./lutz.tex
 Overfull \hbox (14.68391pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [3
 
- <./images/co2temp.jpg>]
-LaTeX Font Info:    Try loading font information for U+msa on input line 27.
+]
+Overfull \hbox (14.68391pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[4
+
+]
+LaTeX Font Info:    Try loading font information for U+msa on input line 35.
  (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 27.
- (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
+LaTeX Font Info:    Try loading font information for U+msb on input line 35.
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 27.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 35.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <8> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 27.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 35.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <6> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 27.
-File: images/co2temp.jpg Graphic file (type jpg)
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 35.
 
-<use images/co2temp.jpg>
-Overfull \hbox (24.00002pt too wide) in paragraph at lines 27--27
+<../paper/images/naxsi_flow.png, id=69, 421.575pt x 500.87125pt>
+File: ../paper/images/naxsi_flow.png Graphic file (type png)
+
+<use ../paper/images/naxsi_flow.png>
+Overfull \hbox (24.00002pt too wide) in paragraph at lines 35--35
 [][]  
  []
 
@@ -907,18 +910,36 @@ Overfull \hbox (14.68391pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[4
+[5
 
-]) (./dennis.tex
+ <../paper/images/naxsi_flow.png (PNG copy)>]
+Overfull \hbox (14.68391pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[6
+
+] <../paper/images/infrastructure.png, id=86, 777.90625pt x 339.2675pt>
+File: ../paper/images/infrastructure.png Graphic file (type png)
+
+<use ../paper/images/infrastructure.png>
+Overfull \hbox (14.68391pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[7
+
+ <../paper/images/infrastructure.png (PNG copy)>]) (./dennis.tex
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 12.
- (/usr/share/texmf-texlive/tex/latex/psnfss/t1pcr.fd
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 Overfull \hbox (14.68391pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[5
+[8
 
 ])
 \tf@nav=\write6
@@ -932,21 +953,19 @@ Overfull \hbox (14.68391pt too wide) has occurred while \output is active
 
  (./presentation.aux) ) 
 Here is how much of TeX's memory you used:
- 15287 strings out of 495061
- 282714 string characters out of 1182621
+ 15304 strings out of 495061
+ 283043 string characters out of 1182621
  347363 words of memory out of 3000000
- 18019 multiletter control sequences out of 15000+50000
- 32787 words of font info for 51 fonts, out of 3000000 for 9000
+ 18029 multiletter control sequences out of 15000+50000
+ 31570 words of font info for 50 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  49i,19n,60p,401b,656s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</
-usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/t
-exmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/fonts
-/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvet
-ic/uhvro8a.pfb>
-Output written on presentation.pdf (5 pages, 82615 bytes).
+usr/share/texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-te
+xlive/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on presentation.pdf (8 pages, 90759 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
- 13 named destinations out of 1000 (max. 500000)
- 89 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 122 PDF objects out of 1000 (max. 8388607)
+ 19 named destinations out of 1000 (max. 500000)
+ 94 words of extra memory for PDF output out of 10000 (max. 10000000)
 
