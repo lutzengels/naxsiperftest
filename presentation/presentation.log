@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.3)  25 MAR 2013 23:00
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.3)  26 MAR 2013 02:33
 entering extended mode
  %&-line parsing enabled.
 **presentation.tex
@@ -873,53 +873,42 @@ Overfull \hbox (5.3535pt too wide) has occurred while \output is active
 
 [3
 
-]
+] <../paper/images/request_flow.png, id=72, 732.7375pt x 567.11874pt>
+File: ../paper/images/request_flow.png Graphic file (type png)
+
+<use ../paper/images/request_flow.png>
+Overfull \vbox (3.16934pt too high) detected at line 19
+ []
+
+
 Overfull \hbox (5.3535pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [4
 
-]
-LaTeX Font Info:    Try loading font information for U+msa on input line 35.
- (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 35.
-
-(/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-)
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 35.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <8> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 35.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <6> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 35.
-
-<../paper/images/naxsi_flow.png, id=70, 421.575pt x 500.87125pt>
-File: ../paper/images/naxsi_flow.png Graphic file (type png)
-
-<use ../paper/images/naxsi_flow.png>
-Overfull \hbox (24.00002pt too wide) in paragraph at lines 35--35
-[][]  
- []
-
-
+ <../paper/images/request_flow.png>]
 Overfull \hbox (5.3535pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [5
 
- <../paper/images/naxsi_flow.png (PNG copy)>]
+]
 Overfull \hbox (5.3535pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [6
 
-] <../paper/images/infrastructure.png, id=87, 779.91376pt x 345.29pt>
+]
+Overfull \hbox (5.3535pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[7
+
+] <../paper/images/infrastructure.png, id=113, 779.91376pt x 345.29pt>
 File: ../paper/images/infrastructure.png Graphic file (type png)
 
 <use ../paper/images/infrastructure.png>
@@ -927,107 +916,109 @@ Overfull \hbox (5.3535pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[7
-
- <../paper/images/infrastructure.png (PNG copy)>]
-Overfull \hbox (5.3535pt too wide) has occurred while \output is active
- [][][][]  
- []
-
 [8
 
-]
+ <../paper/images/infrastructure.png (PNG copy)>]) (./dennis.tex
 Overfull \hbox (5.3535pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [9
 
-]) (./dennis.tex
-Overfull \hbox (5.3535pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[10
-
 ]
-<../paper/images/results/baseline_200/output.png, id=122, 642.4pt x 335.2525pt>
+<../paper/images/results/baseline_200/output.png, id=132, 642.4pt x 335.2525pt>
 File: ../paper/images/results/baseline_200/output.png Graphic file (type png)
 <use ../paper/images/results/baseline_200/output.png>
 Overfull \hbox (5.3535pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[11
+[10
 
  <../paper/images/results/baseline_200/output.png (PNG copy)>]
 <../paper/images/results/200_with_naxsi_incremented_allowed_parameters/output.p
-ng, id=132, 642.4pt x 332.24126pt>
+ng, id=142, 642.4pt x 332.24126pt>
 File: ../paper/images/results/200_with_naxsi_incremented_allowed_parameters/out
 put.png Graphic file (type png)
 
 <use ../paper/images/results/200_with_naxsi_incremented_allowed_parameters/outp
 ut.png>
+Overfull \vbox (3.90845pt too high) detected at line 40
+ []
+
+
+Overfull \hbox (5.3535pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[11
+
+ <../paper/images/results/200_with_naxsi_incremented_allowed_parameters/output.
+png (PNG copy)>]
+<../paper/images/results/200_with_naxsi_incremented_disallowed_parameters/outpu
+t.png, id=153, 642.4pt x 332.24126pt>
+File: ../paper/images/results/200_with_naxsi_incremented_disallowed_parameters/
+output.png Graphic file (type png)
+
+<use ../paper/images/results/200_with_naxsi_incremented_disallowed_parameters/o
+utput.png>
+Overfull \vbox (3.90845pt too high) detected at line 52
+ []
+
+
 Overfull \hbox (5.3535pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [12
 
- <../paper/images/results/200_with_naxsi_incremented_allowed_parameters/output.
-png (PNG copy)>]
-<../paper/images/results/200_with_naxsi_incremented_disallowed_parameters/outpu
-t.png, id=142, 642.4pt x 332.24126pt>
-File: ../paper/images/results/200_with_naxsi_incremented_disallowed_parameters/
-output.png Graphic file (type png)
-
-<use ../paper/images/results/200_with_naxsi_incremented_disallowed_parameters/o
-utput.png>
-Overfull \hbox (5.3535pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[13
-
  <../paper/images/results/200_with_naxsi_incremented_disallowed_parameters/outp
 ut.png (PNG copy)>]
-<../paper/images/results/baseline_wp/output.png, id=153, 642.4pt x 340.27126pt>
+<../paper/images/results/baseline_wp/output.png, id=164, 642.4pt x 340.27126pt>
 File: ../paper/images/results/baseline_wp/output.png Graphic file (type png)
 <use ../paper/images/results/baseline_wp/output.png>
 Overfull \hbox (5.3535pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[14
+[13
 
  <../paper/images/results/baseline_wp/output.png (PNG copy)>]
 <../paper/images/results/wp_with_naxsi_incremented_allowed_parameters/output.pn
-g, id=163, 642.4pt x 335.2525pt>
+g, id=176, 642.4pt x 335.2525pt>
 File: ../paper/images/results/wp_with_naxsi_incremented_allowed_parameters/outp
 ut.png Graphic file (type png)
 
 <use ../paper/images/results/wp_with_naxsi_incremented_allowed_parameters/outpu
 t.png>
+Overfull \vbox (5.41408pt too high) detected at line 73
+ []
+
+
 Overfull \hbox (5.3535pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[15
+[14
 
  <../paper/images/results/wp_with_naxsi_incremented_allowed_parameters/output.p
 ng (PNG copy)>]
 <../paper/images/results/wp_with_naxsi_incremented_disallowed_parameters/output
-.png, id=173, 642.4pt x 334.24875pt>
+.png, id=187, 642.4pt x 334.24875pt>
 File: ../paper/images/results/wp_with_naxsi_incremented_disallowed_parameters/o
 utput.png Graphic file (type png)
 
 <use ../paper/images/results/wp_with_naxsi_incremented_disallowed_parameters/ou
 tput.png>
+Overfull \vbox (4.9122pt too high) detected at line 85
+ []
+
+
 Overfull \hbox (5.3535pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[16
+[15
 
  <../paper/images/results/wp_with_naxsi_incremented_disallowed_parameters/outpu
 t.png (PNG copy)>]
@@ -1035,14 +1026,14 @@ Overfull \hbox (5.3535pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[17
+[16
 
 ]
 Overfull \hbox (5.3535pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[18
+[17
 
 ])
 \tf@nav=\write6
@@ -1056,18 +1047,18 @@ Overfull \hbox (5.3535pt too wide) has occurred while \output is active
 
  (./presentation.aux) ) 
 Here is how much of TeX's memory you used:
- 15365 strings out of 495061
- 285831 string characters out of 1182621
- 347270 words of memory out of 3000000
- 18067 multiletter control sequences out of 15000+50000
- 36729 words of font info for 52 fonts, out of 3000000 for 9000
+ 15319 strings out of 495061
+ 285160 string characters out of 1182621
+ 348269 words of memory out of 3000000
+ 18040 multiletter control sequences out of 15000+50000
+ 26984 words of font info for 32 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  49i,19n,60p,401b,656s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</
 usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on presentation.pdf (18 pages, 128859 bytes).
+Output written on presentation.pdf (17 pages, 136995 bytes).
 PDF statistics:
- 216 PDF objects out of 1000 (max. 8388607)
- 39 named destinations out of 1000 (max. 500000)
- 130 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 233 PDF objects out of 1000 (max. 8388607)
+ 38 named destinations out of 1000 (max. 500000)
+ 138 words of extra memory for PDF output out of 10000 (max. 10000000)
 

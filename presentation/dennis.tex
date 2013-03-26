@@ -1,9 +1,5 @@
-\section{Research questions}
-
-%\section{Future work}
-
 %%%%%%% Measurement approache
-\begin{frame}[noframenumbering]
+\begin{frame}
   \frametitle{Approach}
   \begin{itemize}
    \item Naxsi isolation (HTTP 200 OK)
@@ -19,8 +15,10 @@
   \end{itemize}
 \end{frame}
 
+\section{Results}
+
 %%%%%%% HTTP 200 OK: baseline performance measurement
-\begin{frame}[noframenumbering]
+\begin{frame}
   \frametitle{HTTP 200 OK: baseline performance measurement}
   \begin{figure}[H]
   \centering
@@ -29,7 +27,7 @@
 \end{frame}
 
 %%%%%%% HTTP 200 OK: URL allowed paramter increments
-\begin{frame}[noframenumbering]
+\begin{frame}
   \frametitle{HTTP 200 OK: incrementing allowed URL parameters}
 
   \mbox{http://example.com/?foo1=bar1}\\
@@ -42,7 +40,7 @@
 \end{frame}
 
 %%%%%%% HTTP 200 OK: URL disallowed paramter increments
-\begin{frame}[noframenumbering]
+\begin{frame}
   \mbox{http://example.com/?../}\\
   \mbox{http://example.com/?foo1=bar1\&../}
 
@@ -54,7 +52,7 @@
 \end{frame}
 
 %%%%%%% Wordpress baseline
-\begin{frame}[noframenumbering]
+\begin{frame}
   \frametitle{Wordpress: baseline performance measurement}
   \begin{figure}[H]
   \centering
@@ -63,7 +61,7 @@
 \end{frame}
 
 %%%%%%% Wordpress with Naxsi
-\begin{frame}[noframenumbering]
+\begin{frame}
   \mbox{http://example.com/?foo1=bar1}\\
   \mbox{http://example.com/?foo1=bar1\&foo2=bar2}
 
@@ -75,7 +73,7 @@
 \end{frame}  
   
 %%%%%%% Wordpress with Naxsi
-\begin{frame}[noframenumbering]
+\begin{frame}
   \mbox{http://example.com/?../}\\
   \mbox{http://example.com/?foo1=bar1\&../}
   
@@ -85,9 +83,9 @@
   \includegraphics[scale=0.5] {../paper/images/results/wp_with_naxsi_incremented_disallowed_parameters/output.png}
   \end{figure}
 \end{frame}   
-  
+
 %%%%%%% Conclusion
-\begin{frame}[noframenumbering]
+\begin{frame}
   \frametitle{Conclusion}
   \begin{itemize}
     \item Naxsi has a low overhead on system resources
@@ -97,7 +95,7 @@
 \end{frame}
 
 %%%%%%% Conclusion
-\begin{frame}[noframenumbering]
+\begin{frame}
   \frametitle{Questions}
   \begin{center}
   Questions?

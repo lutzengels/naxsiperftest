@@ -2,69 +2,64 @@
 
 %%%%%%% SECTION 1/3
 \begin{frame}
-  \frametitle{What is a WAF?}
+  \frametitle{What is a Naxsi?}
    \begin{itemize}
-   \item Web Application Firewall 
-   \item 
-  \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{What is a naxsi?}
-   \begin{itemize}
-   \item It's a WAF for nginx
    \item Nginx Anti Xss \& Sql Injection
-   \item designed as reverse proxy
+   \item Web Application Firewall
+   \item Module Nginx webserver
+   \item Designed as reverse proxy
   \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{Naxsi request flow}
-\begin{tabular}{ll}
-\begin{minipage}[c]{0.3\textwidth}
-\includegraphics[width=\textwidth]{../paper/images/naxsi_flow.png}
-\end{minipage}
-&
-\begin{minipage}[c]{0.7\textwidth}
-  \begin{itemize}
-   \item Oui!
-   \item Sis is mooi sjrafiek
-  \end{itemize}
-\end{minipage}
-\end{tabular}
+    \begin{center} 
+      \includegraphics[width=0.75\textwidth]{../paper/images/request_flow.png}
+    \end{center}
 \end{frame}
 
 
 \begin{frame}
   \frametitle{Whitelist processing}
-   \begin{itemize}
-   \item 
-   \item 
-   \item
+    \begin{itemize}
+     \item HTTP requests parsed
+      \begin{itemize}
+        \item devided into zones:
+	\item ARGS (GET arguments), URL (the full URI), BODY (POST arguments), as well as Cookie http header
+      \end{itemize}
+      \item Core rules
+      \begin{itemize}
+        \item RegEx
+	\item unique IDs
+      \end{itemize}
+     \item White lists and Specific Rules
+       \begin{itemize}
+        \item define strictness
+      \end{itemize}
   \end{itemize}
 \end{frame}
 
+\section{Research questions}
+
+\begin{frame}
+  \frametitle{Research Question(s)}
+   \begin{center}
+   \LARGE{"How does Naxsi influence the performance of the Nginx webserver?"}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Research Question(s)}
+   \begin{center}
+   \LARGE{"What is the performance of Nginx firewall when Naxsi is isolated?"}
+   \vskip1em
+   \LARGE{"What is the performance of the Nginx firewall in a real life scenario?"}
+  \end{center}
+\end{frame}
 
 \begin{frame}
   \frametitle{Experimental setup}
     \begin{center} 
       \includegraphics[width=0.80\textwidth]{../paper/images/infrastructure.png}
-  \end{center}
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{Research Question(s)}
-   \begin{center}
-   \LARGE{"How does a webserver perform with the use of Naxsi as the front-end firewall
-compared to a webserver without a Naxsi firewall?"}\\OR\\
-   \LARGE{"How does the use of Naxsi as the front-end firewall influence the performance of a webserver?"}
-  \end{center}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Research Question(s)}
-   \begin{center}
-   \LARGE{"What is the baseline performance of the Nginx firewall without the usage of Naxsi?"}
-  \end{center}
+    \end{center}
 \end{frame}
