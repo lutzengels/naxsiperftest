@@ -20,6 +20,14 @@
 % Define colors
 \definecolor{gray}{gray}{0.8}
 
+% Place paragraph titles on a single line
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+{-3.25ex\@plus -1ex \@minus -.2ex}%
+{1.5ex \@plus .2ex}%
+{\normalfont\normalsize\bfseries}}
+\makeatother
+
 \begin{document}
 %\maketitle
 \begin{titlepage}
@@ -60,14 +68,15 @@ lutz.engelsn@os3.nl\\
 \subfile{naxsi.tex}
 \subfile{methods.tex}
 \subfile{measurements.tex}
-\subfile{results.tex}
 \subfile{conclusion.tex}
+\subfile{further_research.tex}
 
 \bibliographystyle{plain}
 \bibliography{references}
 \appendix
 \subfile{acronyms.tex}
+\subfile{measurement_results.tex}
 \subfile{configuration.tex}
 %\subfile{scripts.tex}
-\subfile{measurement_results.tex}
+
 \end{document}
