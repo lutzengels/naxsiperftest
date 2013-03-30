@@ -53,10 +53,8 @@
 %{Draft report}\\[0.4cm]
 {\large \today}\\
 \end{center}
-
 \vfill
 % Bottom of the page
-
 \begin{minipage}[t]{0.4\textwidth}
 \begin{flushleft} \large
 \emph{Authors:}\\
@@ -73,10 +71,13 @@ lutz.engels@os3.nl\\
 \end{minipage}
 \end{titlepage}
 
+\pagestyle{empty}
 \subfile{abstract.tex}
 \newpage
 \tableofcontents
 \newpage
+\pagestyle{plain}
+\setcounter{page}{1}
 \subfile{introduction.tex}
 \subfile{naxsi.tex}
 \subfile{methods.tex}
@@ -84,10 +85,11 @@ lutz.engels@os3.nl\\
 \subfile{conclusion.tex}
 \subfile{further_research.tex}
 
-\bibliographystyle{plain}
-\bibliography{references}
 \appendix
 \subfile{acronyms.tex}
+\bibliographystyle{plain}
+\bibliography{references}
+\pagenumbering{roman}
 \subfile{measurement_results.tex}
 \subfile{configuration.tex}
 %\subfile{scripts.tex}
