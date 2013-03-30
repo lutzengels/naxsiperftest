@@ -1,0 +1,14 @@
+\begin{thebibliography}{1}
+
+\bibitem{mosberger1998httperf}
+David Mosberger and Tai Jin.
+\newblock httperf—a tool for measuring web server performance.
+\newblock {\em ACM SIGMETRICS Performance Evaluation Review}, 26(3):31--37,
+  1998.
+
+\bibitem{prechelt2000empirical}
+Lutz Prechelt.
+\newblock An empirical comparison of c, c++, java, perl, python, rexx and tcl.
+\newblock {\em IEEE Computer}, 33(10):23--29, 2000.
+
+\end{thebibliography}

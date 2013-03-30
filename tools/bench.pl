@@ -5,13 +5,14 @@ use warnings;
 use Switch;
 use Time::Local;
 
-my $url = "http://200_without_naxsi.test.nl/";
+my $url;
 my $rounds;
 my $step;
 my $duration;
 my $low_con;
 my $high_con;
 my $file;
+my $to_file = 0;
 
 for (my $i=0; $i <= $#ARGV; $i++) {
 	switch ($ARGV[$i]) {
@@ -32,13 +33,14 @@ for (my $i=0; $i <= $#ARGV; $i++) {
 		}
 		case '--file' {
 			$file = $ARGV[$i + 1];
+			$to_file = 1;
 		}
 	}
 }
 
 $url = $ARGV[$#ARGV];
 
-if (!defined ($step) || !defined ($duration) || !defined ($rounds) || !defined ($low_con) || !defined ($high_con) || !defined ($file) || !defined ($url)) {
+if (!defined ($step) || !defined ($duration) || !defined ($rounds) || !defined ($low_con) || !defined ($high_con) || !defined ($url)) {
 	print ("Usage: \./bench.pl options http://hostname[:port]/path\n");
 	print ("Options are:\n");
 	print ("\t--step\t\tNumber of concurrent connection to increment each step with\n");
@@ -46,21 +48,14 @@ if (!defined ($step) || !defined ($duration) || !defined ($rounds) || !defined (
 	print ("\t--rounds\tNumber of rounds to repeat each test\n");
 	print ("\t--low_con\tNumber of concurrent connections to start with\n");
 	print ("\t--high_con\tNumber of concurrent connection to end with\n");
-	print ("\t--file\tOutput file\n");
+	print ("\t--file\t\tOutput to file. Otherwise to screen\n");
 
 	exit (-1);
 }
 
-my $hours= ($high_con - $low_con + $step) / $step * $rounds * $duration / 3600;
-my $minutes= ($high_con - $low_con + $step) / $step * $rounds * $duration / 60;
-
-if ($hours >= 1) {
-	printf ("Expected time needed: %.2f hours\n", $hours);
-} else {
-	printf ("Expected time needed: %.2f minutes\n", $minutes);
+if ($to_file == 1) {
+	open FILE, ">$file" or die $!;
 }
-
-open FILE, ">$file" or die $!;
 
 for (my $i=$low_con; $i<=$high_con; $i+=$step) {
 	my $low = 0;
@@ -69,7 +64,7 @@ for (my $i=$low_con; $i<=$high_con; $i+=$step) {
 	my $total = 0;
 
 	for (my $j=0; $j<$rounds; $j++) {
-		my @ret=`ab -c $i -t $duration $url 2>/dev/null`;
+		my @ret=`ab -c $i -t $duration '$url' 2>/dev/null`;
 
 		foreach my $line (@ret) {
 			chomp ($line);
@@ -89,10 +84,15 @@ for (my $i=$low_con; $i<=$high_con; $i+=$step) {
 	}	
 
 	$avg = $total / $rounds;
-	print FILE "$i,$avg,$low,$high\n";
 
-	#printf ("%.2f%% completed\n", 100 * ($i - $low_con) / ($high_con / $step - $low_con));
-	printf ("%.2f%% completed\n", 100 * ($i - $low_con + $step) / ($high_con - $low_con + $step));
+	if ($to_file == 1) {
+		print FILE "$i,$avg,$low,$high\n";
+		printf ("%.2f%% completed\n", 100 * ($i - $low_con + $step) / ($high_con - $low_con + $step));
+	} else {
+		print "$i,$avg,$low,$high\n";
+	}
 }
 
-close FILE
+if ($to_file) {
+	close FILE;
+}
