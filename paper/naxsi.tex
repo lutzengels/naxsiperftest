@@ -17,7 +17,24 @@ When Naxsi is in production mode, it will actively give each request a score. De
 
 \subsection{Whitelist processing}
 \label{sec:naxsi_whitelist}
-TODO: EXPLAIN WHITELIST PROCESSING
+% From BUI: For whitelist processing, the process is the following : 1°) check rule X, 2°) if rule X is matched, look up in the various hashtables. hashtables are splitted according to "zones", to limit collisions (not handled by nginx's hashtable mechanism). you can find it in ngx_http_dummy_is_rule_whitelisted_n() from naxsi_runtime.c
+%
+%Technically, it is a third party nginx module, available as a package for many UNIX-like platforms. This module, by default, reads a small subset of simple rules (naxsi_core.rules) containing 99% of known patterns involved in websites vulnerabilities. For example, '<', '|' or 'drop' are not supposed to be part of a URI.
+%Being very simple, those patterns may match legitimate queries, it is Naxsi's administrator duty to add specific rules that will whitelist those legitimate behaviours. The administrator can either add whitelists manually by analyzing nginx's error log, or (recommended) start the project by an intensive auto-learning phase that will automatically generate whitelisting rules regarding website's behaviour.
+%In short, Naxsi behaves like a DROP-by-default firewall, the only job needed is to add required ACCEPT rules for the target website to work properly.
+Naxsi has a small set of rules that can be referred to as blacklist, but in Naxsi terms are called \emph{core rules}. They contain regular expressions matching patterns that are often found in attacks.\\
+
+\subsubsection*{Core Rules/blacklist}
+
+\begin{verbatim}
+MainRule "str:<" "msg:html open tag" "mz:ARGS|URL|BODY|$HEADERS_VAR:Cookie" "s:$XSS:8" id:1302; 
+\end{verbatim}
+
+\subsubsection*{Zones}
+
+\subsubsection*{Whitlists}
+
+\subsubsection*{Specific Rules}
 
 \end{document}
 
