@@ -17,9 +17,9 @@ When Naxsi is in production mode, it will actively give each request a score. De
 
 \subsection{Whitelist processing}
 \label{sec:naxsi_whitelist}
-As discussed before Naxsi does have a short blacklist. However, the usage of whitelists is more extensive. This is why some more attentions is brought to the details of processing those.
+As discussed before Naxsi does have a short blacklist. However, the usage of whitelists is more extensive. This is why some more attentions is brought to the details of processing hereof.
 
-Upon startup of Naxsi the local rules file(s) are read and hashtables for the so called zones are created (see fig.~\ref{fig:hashtables}).
+Upon startup of Naxsi the local rules file(s) are read and hashtables for the so called zones are created in memory (see fig.~\ref{fig:hashtables}). The zones are respectively:
 \begin{itemize}
 	\item ARGS (GET arguments)
 	\item URL (the full URI)
@@ -36,6 +36,7 @@ Once a HTTP request is accepted, it is parsed and split up into 4 streams: ARGS,
 \label{fig:hashtables}
 \end{figure}
 
+This approach shows that matching is done very efficient. Creating hashtables from the rules, should fasten the process of lookups. Furthermore through splitting up the REQUEST data in the same manner as the hashtables, the processing of parameters is handled separate and thereby effectively.
 
 \begin{figure}[h]
 \caption{Naxsi whitelist processing}
