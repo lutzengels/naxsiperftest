@@ -6,7 +6,7 @@
 
 \subsection{Hardware}
 
-\begin{table}[h]
+\begin{table}[H]
 \caption{server01}
 \centering
 \begin{tabular}{|p{2cm}|p{9cm}|}
@@ -22,7 +22,7 @@
 \end{tabular}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[H]
 \caption{server02}
 \centering
 \begin{tabular}{|p{2cm}|p{9cm}|}
@@ -37,7 +37,7 @@
 \end{tabular}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[H]
 \caption{server03}
 \centering
 \begin{tabular}{|p{2cm}|p{9cm}|}
@@ -52,7 +52,7 @@
 \end{tabular}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[H]
 \caption{server04}
 \centering
 \begin{tabular}{|p{2cm}|p{9cm}|}
@@ -67,7 +67,7 @@
 \end{tabular}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[H]
 \caption{server05}
 \centering
 \begin{tabular}{|p{2cm}|p{9cm}|}
@@ -88,9 +88,14 @@
 \label{sec:Configuration}
 
 \subsubsection{server01, server02, server03 and server04}
-\begin{lstlisting}[frame=single,caption=cronjob -l ,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+\begin{lstlisting}[frame=single,caption=cronjob -l ,backgroundcolor=\color{gray},breaklines=true,numbers=left]
 @hourly /usr/sbin/ntpdate 0.nl.pool.ntp.org 1.nl.pool.ntp.org 2.nl.pool.ntp.org 3.nl.pool.ntp.org
 \end{lstlisting}
+
+%\subsubsection{server01, server02, server03 and server04}
+%\begin{lstlisting}[frame=single,caption=cronjob -l ,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+%@hourly /usr/sbin/ntpdate 0.nl.pool.ntp.org 1.nl.pool.ntp.org 2.nl.pool.ntp.org 3.nl.pool.ntp.org
+%\end{lstlisting}
 
 \begin{lstlisting}[frame=single,caption=Collectd,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
 # apt-get install -y vim build-essential librrd-dev
@@ -490,6 +495,7 @@ BasicRule wl:1000 "mz:$URL:/wp-admin/users.php|$ARGS_VAR:delete_count|NAME";
 BasicRule wl:1000 "mz:$URL:/wp-admin/users.php|$ARGS_VAR:update|NAME";
 \end{lstlisting}\footnote{\url{http://imil.net/wp/2012/12/30/wordpress-3-5-and-naxsi/}}
 
+\newpage
 \subsubsection{server02}
 \label{sec:server02_configuration}
 
@@ -537,49 +543,6 @@ nameserver 145.100.96.22
 # chown -R www-data:www-data /srv/www/with_naxsi.test.nl
 \end{lstlisting}
 
-\begin{lstlisting}[frame=single,caption=/etc/nginx/sites-enabled/with\_wordpress,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
-upstream wordpress {
-  server 10.1.2.2;
-}
-
-server {
-  listen                80;
-
-  server_name           wp_without_naxsi.test.nl;
-
-  location / {
-    proxy_pass          http://wordpress;
-    proxy_redirect      off;
-    proxy_set_header    Host             $host;
-    proxy_set_header    X-Real-IP        $remote_addr;
-    proxy_set_header    X-Forwarded-For  $proxy_add_x_forwarded_for;
-  }
-}
-
-server {
-  listen                80;
-
-  server_name           wp_with_naxsi.test.nl;
-
-  location / {
-    include             /etc/nginx/nbs.rules;
-    proxy_pass          http://wordpress;
-    proxy_redirect      off;
-    proxy_set_header    Host             $host;
-    proxy_set_header    X-Real-IP        $remote_addr;
-    proxy_set_header    X-Forwarded-For  $proxy_add_x_forwarded_for;
-  }
-
-  location /RequestDenied {
-	return 403;
-  }
-}
-\end{lstlisting}
-
-\begin{lstlisting}[frame=single,caption=/etc/nginx/sites-enabled/with\_wordpress,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
-TODO
-\end{lstlisting}
-
 \begin{lstlisting}[frame=single,caption=/usr/bin/php-fastcgi (needs chmod +x /usr/bin/php-fastcgi),backgroundcolor=\color{gray},breaklines=true,numbers=left,]
 #!/bin/bash
 
@@ -591,6 +554,24 @@ CHILDREN=6
 PHP5=/usr/bin/php5-cgi
 
 /usr/bin/spawn-fcgi -s $SOCKET -P $PIDFILE -C $CHILDREN -u $FASTCGI_USER -g $FASTCGI_GROUP -f $PHP5
+\end{lstlisting}
+
+\begin{lstlisting}[frame=single,caption=/etc/nginx/sites-enabled/wordpress,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
+server {
+    server_name wordpress;
+    root /srv/www/wordpress;
+
+    location / {
+        index  index.php;
+    }
+
+    location ~ \.php$ {
+        include /etc/nginx/fastcgi_params;
+        fastcgi_pass unix:/var/run/php-fastcgi/php-fastcgi.socket;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME /srv/www/wordpress$fastcgi_script_name;
+    }
+}
 \end{lstlisting}
 
 \begin{lstlisting}[frame=single,caption=/etc/nginx/nginx.conf,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
@@ -689,6 +670,7 @@ update-rc.d php-fastcgi defaults
 /etc/init.d/nginx start
 \end{lstlisting}
 
+\newpage
 \subsubsection{server03}
 \label{sec:server03_configuration}
 
@@ -734,8 +716,9 @@ mysql> GRANT ALL PRIVILEGES ON wordpress.* TO 'naxsi'@'10.2.2.2' IDENTIFIED BY '
 Query OK, 0 rows affected (0.00 sec)
 \end{lstlisting}
 
+\newpage
 \subsubsection{server04}
-\label{sec:server02_configuration}
+\label{sec:server04_configuration}
 
 \begin{lstlisting}[frame=single,caption=/etc/network/interfaces,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
 auto lo
@@ -773,6 +756,7 @@ nameserver 145.100.96.22
 # make install
 \end{lstlisting}
 
+\newpage
 \subsubsection{server05}
 
 \begin{lstlisting}[frame=single,caption=Debian packages,backgroundcolor=\color{gray},breaklines=true,numbers=left,]
