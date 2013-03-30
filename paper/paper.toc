@@ -3,17 +3,16 @@
 \contentsline {subsection}{\numberline {2.1}Request flow}{5}
 \contentsline {subsection}{\numberline {2.2}Whitelist processing}{5}
 \contentsline {section}{\numberline {3}Methods}{5}
-\contentsline {subsection}{\numberline {3.1}Experimental setup}{5}
-\contentsline {subsection}{\numberline {3.2}Performance measurement tools}{6}
+\contentsline {subsection}{\numberline {3.1}Experimental setup}{6}
+\contentsline {subsection}{\numberline {3.2}Performance measurement tools}{7}
 \contentsline {subsubsection}{\numberline {3.2.1}Apache Benchmark}{7}
-\contentsline {subsubsection}{\numberline {3.2.2}Httperf}{7}
-\contentsline {subsubsection}{\numberline {3.2.3}Autobench}{7}
-\contentsline {subsubsection}{\numberline {3.2.4}Collectd}{7}
-\contentsline {subsection}{\numberline {3.3}Performance measurements}{7}
+\contentsline {subsubsection}{\numberline {3.2.2}Httperf/Autobench}{7}
+\contentsline {subsubsection}{\numberline {3.2.3}Collectd}{7}
+\contentsline {subsection}{\numberline {3.3}Performance measurements}{8}
 \contentsline {subsubsection}{\numberline {3.3.1}Wordpress}{8}
-\contentsline {subsubsection}{\numberline {3.3.2}HTTP 200 OK}{8}
+\contentsline {subsubsection}{\numberline {3.3.2}HTTP 200 OK}{9}
 \contentsline {subsubsection}{\numberline {3.3.3}URL parameters}{9}
-\contentsline {section}{\numberline {4}Experiments}{9}
+\contentsline {section}{\numberline {4}Experiments}{10}
 \contentsline {subsection}{\numberline {4.1}Baseline performance measurements}{10}
 \contentsline {subsubsection}{\numberline {4.1.1}Wordpress}{10}
 \contentsline {subsubsection}{\numberline {4.1.2}HTTP 200 OK}{11}
