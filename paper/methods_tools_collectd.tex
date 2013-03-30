@@ -1,5 +1,5 @@
 Collectd\footnote{\url{http://collectd.org/}} is a daemon for unix-based operating systems that gathers performance statistics. It has a modular design, meaning that the collection different kind of statistics (like e.g. cpu-load or network-usage) is en- or disabled by toggling the respective plugins and thereby minimizing resource usage. Furthermore it only handles the data collection and storage hereof, leaving out logic to create graphs, whilst storing data in \ac{RRD} files. Programs like RRDtool in turn can easily create graphs from the RRD-files. It is written in the fast and low impact programming language C~\cite{prechelt2000empirical} and designed to be run on e.g. embedded devices.
-As to influence the experimental setup as little as possible Collectd appeared to be the right choice.
+As to influence the experimental setup as little as possible Collectd appears to be the right choice.
 
 Collectd is configured on all servers of the experimental setup. \emph{Server01} to \emph{server04} are configured as clients, collecting their own local performance data. \emph{server05} also collects local performance data, but furthermore receives those from the clients. Eventually the \emph{Collection 3}\footnote{\url{https://collectd.org/wiki/index.php/Collection_3}} web-based front-end uses RRDtool to graph the collected data.
 \\
