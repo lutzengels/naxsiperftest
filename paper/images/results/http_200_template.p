@@ -13,7 +13,7 @@ set size 1,0.7
 set grid y
  
 # x-axis label
-set xlabel "parameters"
+set xlabel "concurrent connections"
  
 # y-axis label
 set ylabel "requests per second"
