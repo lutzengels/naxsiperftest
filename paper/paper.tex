@@ -7,6 +7,7 @@
 \usepackage{graphicx}
 \usepackage{subfiles}
 \usepackage{url}
+\PassOptionsToPackage{hyphens}{url}\usepackage[plainpages=true,pdfpagelabels]{hyperref}
 \usepackage{listings}
 \usepackage{caption}
 \usepackage{color}
@@ -25,6 +26,15 @@
   commentstyle=\itshape\color{purple!40!black},
   identifierstyle=\color{blue},
   stringstyle=\color{orange},
+}
+
+\hypersetup{%
+  linkcolor     = black,
+  filecolor     = black,
+  urlcolor      = black,
+  citecolor     = black,
+  linktocpage   = true,
+  colorlinks    = true
 }
 
 % Format lstlisting
@@ -65,8 +75,8 @@
 \begin{minipage}[t]{0.4\textwidth}
 \begin{flushright} \large
 \mbox{ }\\
-dennis.pellikaan@os3.nl\\
-lutz.engels@os3.nl\\
+\href{mailto:dennis.pellikaan@os3.nl}{dennis.pellikaan@os3.nl}\\
+\href{mailto:lutz.engels@os3.nl}{lutz.engels@os3.nl}
 \end{flushright}
 \end{minipage}
 \end{titlepage}
