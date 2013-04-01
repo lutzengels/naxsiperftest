@@ -11,7 +11,7 @@ set size 1,0.7
 set grid y
  
 # x-axis label
-set xlabel "concurrent requests"
+set xlabel "parameters"
  
 # y-axis label
 set ylabel "response time (ms)"
