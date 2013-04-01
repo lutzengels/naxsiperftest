@@ -1,0 +1,48 @@
+\begin{thebibliography}{10}
+
+\bibitem{apachebenchmark2013}
+ab - apache http server benchmarking tool.
+\newblock \url{http://httpd.apache.org/docs/2.2/programs/ab.html}.
+
+\bibitem{autobench2013}
+Autobench.
+\newblock \url{http://www.xenoclast.org/autobench/}.
+
+\bibitem{collectd2013}
+Collectd – the system statistics collection daemon.
+\newblock \url{http://collectd.org/}.
+
+\bibitem{collection3}
+Collection 3.
+\newblock \url{https://collectd.org/wiki/index.php/Collection_3}.
+
+\bibitem{Eckerson1995}
+Wayne~W. Eckerson.
+\newblock Three tier client/server architecture: Achieving scalability,
+  performance, and efficiency in client server applications.
+\newblock {\em Open Information Systems}, 10(1), 1995.
+
+\bibitem{httperf}
+Httperf - a tool for measuring web server performance.
+\newblock \url{http://www.hpl.hp.com/research/linux/httperf/}.
+
+\bibitem{mosberger1998httperf}
+David Mosberger and Tai Jin.
+\newblock httperf—a tool for measuring web server performance.
+\newblock {\em ACM SIGMETRICS Performance Evaluation Review}, 26(3):31--37,
+  1998.
+
+\bibitem{naxsi2013}
+{Naxsi - Nginx Anti Xss \& Sql Injection}.
+\newblock \url{https://code.google.com/p/naxsi/}.
+
+\bibitem{prechelt2000empirical}
+Lutz Prechelt.
+\newblock An empirical comparison of c, c++, java, perl, python, rexx and tcl.
+\newblock {\em IEEE Computer}, 33(10):23--29, 2000.
+
+\bibitem{wordpress}
+Wordpress.
+\newblock \url{http://wordpress.org/}.
+
+\end{thebibliography}
