@@ -72,7 +72,7 @@ Figure~\ref{fig:wordpress_with_naxsi_valid_parameters} shows how the response ti
 
 \paragraph{Disallowed parameters}
 
-At first sight, the graph in figure~\ref{fig:Invalid parameters} shows strange behaviour. This is because as soon as Naxsi sees an invalid \ac{URL} parameter, it returns an \verb+HTTP 403+ error code to the requesting client. The first measurement, where no \ac{URL} parameter is used, the requests gets forwarded to the back-end server that processes the request, and the results get back to the client. This takes about the same amount of time as is measured during the baseline measurements. As soon as an \verb+HTTP 403+ error code is returned, it takes only very little time, as can be seen in table~\ref{tab:Wordpress response time with invalid URL parameters}.
+At first sight, the graph in figure~\ref{fig:Invalid parameters} shows strange behaviour. This is because as soon as Naxsi sees an invalid \ac{URL} parameter, it returns an \verb+HTTP 403+ error code to the requesting client. The first measurement, where no \ac{URL} parameter is used, the requests gets forwarded to the back-end server that processes the request, and the results get back to the client. This takes about the same amount of time as is measured during the baseline measurements. As soon as an \verb+HTTP 403+ error code is returned, it takes only very little time, as can be seen in table~\ref{tab:wrtwiup}.
 
 \begin{table}[H]
 \caption{Wordpress: response time with invalid URL parameters}
@@ -85,7 +85,7 @@ At first sight, the graph in figure~\ref{fig:Invalid parameters} shows strange b
 6-17 & 0.4 \\ \hline
 18-20 & 0.5 \\ \hline
 \end{tabular}
-\label{tab:Wordpress: response time with invalid URL parameters}
+\label{tab:wrtwiup}
 \end{table}
 
 \begin{figure}[H]
