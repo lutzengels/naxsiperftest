@@ -5,7 +5,7 @@
 \BOOKMARK [1][-]{section.3}{Methods}{}
 \BOOKMARK [2][-]{subsection.3.1}{Experimental setup}{section.3}
 \BOOKMARK [2][-]{subsection.3.2}{Performance measurement tools}{section.3}
-\BOOKMARK [3][-]{subsubsection.3.2.1}{Apache Benchmark}{subsection.3.2}
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Apache benchmark}{subsection.3.2}
 \BOOKMARK [3][-]{subsubsection.3.2.2}{Httperf/Autobench}{subsection.3.2}
 \BOOKMARK [3][-]{subsubsection.3.2.3}{Collectd}{subsection.3.2}
 \BOOKMARK [2][-]{subsection.3.3}{Performance measurements}{section.3}

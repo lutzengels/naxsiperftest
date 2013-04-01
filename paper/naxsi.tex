@@ -40,6 +40,6 @@ As visualized in figure~\ref{fig:whitelist_processing}, once an HTTP request is 
 \label{fig:whitelist_processing}
 \end{figure}
 
-This approach shows that matching is done very efficient. Creating hash tables from the whitelists in memory, accelerates the process of lookups. Furthermore, through splitting up the REQUEST data in the same manner as the hash tables, the processing of parameters is handled separately. This allows for lookups to be only done, when there is need for it. If, for example, a request contains a few URL parameters, but only one of them is 'suspicious', each parameter is matched against the (short list of) core rules, but only the suspicious one is further analysed.
+This approach shows that matching is done very efficient. Creating hash tables from the whitelists in memory, accelerates the process of lookups. Furthermore, through splitting up the REQUEST data in the same manner as the hash tables, the processing of parameters is handled separately. This allows for lookups to be only done, when there is a need for it. If, for example, a request contains a few URL parameters, but only one of them is 'suspicious', each parameter is matched against the (short list of) core rules, but only the suspicious one is further analysed.
 
 \end{document}
