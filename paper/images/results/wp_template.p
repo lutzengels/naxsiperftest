@@ -11,10 +11,10 @@ set size 1,0.7
 set grid y
  
 # x-axis label
-set xlabel "parameters"
+set xlabel "concurrent connections"
  
 # y-axis label
 set ylabel "response time (ms)"
  
-#plot "results.csv" using 1 smooth sbezier with lines title ""
-plot "results.csv" using 1 with lines title ""
+plot "results.csv" using 8 smooth sbezier with lines title ""
+#plot "results.csv" using 1 with lines title ""
