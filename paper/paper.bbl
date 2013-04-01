@@ -1,5 +1,11 @@
 \begin{thebibliography}{1}
 
+\bibitem{Eckerson1995}
+Wayne~W. Eckerson.
+\newblock Three tier client/server architecture: Achieving scalability,
+  performance, and efficiency in client server applications.
+\newblock {\em Open Information Systems}, 10(1), 1995.
+
 \bibitem{mosberger1998httperf}
 David Mosberger and Tai Jin.
 \newblock httperf—a tool for measuring web server performance.
