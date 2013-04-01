@@ -1,0 +1,44 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}
+\BOOKMARK [1][-]{section.2}{Naxsi}{}
+\BOOKMARK [2][-]{subsection.2.1}{Request flow}{section.2}
+\BOOKMARK [2][-]{subsection.2.2}{Whitelist processing}{section.2}
+\BOOKMARK [1][-]{section.3}{Methods}{}
+\BOOKMARK [2][-]{subsection.3.1}{Experimental setup}{section.3}
+\BOOKMARK [2][-]{subsection.3.2}{Performance measurement tools}{section.3}
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Apache Benchmark}{subsection.3.2}
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Httperf/Autobench}{subsection.3.2}
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Collectd}{subsection.3.2}
+\BOOKMARK [2][-]{subsection.3.3}{Performance measurements}{section.3}
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Wordpress}{subsection.3.3}
+\BOOKMARK [3][-]{subsubsection.3.3.2}{HTTP 200 OK}{subsection.3.3}
+\BOOKMARK [3][-]{subsubsection.3.3.3}{URL parameters}{subsection.3.3}
+\BOOKMARK [1][-]{section.4}{Experiments}{}
+\BOOKMARK [2][-]{subsection.4.1}{Baseline performance measurements}{section.4}
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Wordpress}{subsection.4.1}
+\BOOKMARK [3][-]{subsubsection.4.1.2}{HTTP 200 OK}{subsection.4.1}
+\BOOKMARK [2][-]{subsection.4.2}{Performance measurements with Naxsi}{section.4}
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Wordpress}{subsection.4.2}
+\BOOKMARK [3][-]{subsubsection.4.2.2}{HTTP 200 OK}{subsection.4.2}
+\BOOKMARK [1][-]{section.5}{Conclusion}{}
+\BOOKMARK [1][-]{section.6}{Further research}{}
+\BOOKMARK [1][-]{appendix.A}{Acronyms and abbreviations}{}
+\BOOKMARK [1][-]{appendix.B}{Measurement results}{}
+\BOOKMARK [2][-]{subsection.B.1}{Baseline performance measurements}{appendix.B}
+\BOOKMARK [3][-]{subsubsection.B.1.1}{Wordpress httperf measurement 1}{subsection.B.1}
+\BOOKMARK [3][-]{subsubsection.B.1.2}{Wordpress httperf measurement 2}{subsection.B.1}
+\BOOKMARK [3][-]{subsubsection.B.1.3}{Wordpress: resource usage}{subsection.B.1}
+\BOOKMARK [3][-]{subsubsection.B.1.4}{HTTP 200 OK: resource usage}{subsection.B.1}
+\BOOKMARK [2][-]{subsection.B.2}{Naxsi performance measurements}{appendix.B}
+\BOOKMARK [3][-]{subsubsection.B.2.1}{Wordpress: resource usage with valid URL parameters}{subsection.B.2}
+\BOOKMARK [3][-]{subsubsection.B.2.2}{Wordpress: resource usage with valid URL parameters}{subsection.B.2}
+\BOOKMARK [3][-]{subsubsection.B.2.3}{HTTP 200 OK: resource usage with valid URL parameters}{subsection.B.2}
+\BOOKMARK [3][-]{subsubsection.B.2.4}{HTTP 200 OK: resource usage with invalid URL parameters}{subsection.B.2}
+\BOOKMARK [1][-]{appendix.C}{Experimental setup}{}
+\BOOKMARK [2][-]{subsection.C.1}{Hardware}{appendix.C}
+\BOOKMARK [2][-]{subsection.C.2}{Configuration}{appendix.C}
+\BOOKMARK [3][-]{subsubsection.C.2.1}{server01, server02, server03 and server04}{subsection.C.2}
+\BOOKMARK [3][-]{subsubsection.C.2.2}{server01}{subsection.C.2}
+\BOOKMARK [3][-]{subsubsection.C.2.3}{server02}{subsection.C.2}
+\BOOKMARK [3][-]{subsubsection.C.2.4}{server03}{subsection.C.2}
+\BOOKMARK [3][-]{subsubsection.C.2.5}{server04}{subsection.C.2}
+\BOOKMARK [3][-]{subsubsection.C.2.6}{server05}{subsection.C.2}
